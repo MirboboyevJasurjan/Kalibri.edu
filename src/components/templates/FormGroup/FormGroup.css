@@ -1,0 +1,8 @@
+
+.error {
+    border-color: red !important;
+}
+.error:focus {
+        border-color: red !important;
+        box-shadow: inset 0 0 0 0 !important;
+}

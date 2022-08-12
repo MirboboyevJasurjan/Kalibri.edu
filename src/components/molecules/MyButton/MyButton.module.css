@@ -1,0 +1,29 @@
+.mybutton{
+    background: transparent;
+    height: 60px;
+    width: 180px;
+    border: 1px solid #111;
+    outline: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+.text{
+    text-align: center;
+    margin: auto;
+    transition: 0.3s;
+    transform: translate(10px);
+}
+.icon{
+    transform: translate(22px);
+    transition: 0.3s;
+}
+
+.mybutton:hover > .text{
+    transform: translate(-20px);
+    transition: 0.3s;
+}
+.mybutton:hover > .icon{
+    transform: translateX(-10px);
+}

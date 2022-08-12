@@ -1,0 +1,91 @@
+.cta-three .block-title {
+    margin-bottom: 45px;
+}
+
+.cta-three .block-title__title {
+    font-size: 50px;
+}
+
+.cta-three__image {
+    float: right;
+}
+
+.cta-three__content {
+    padding: 105px 0;
+    padding-left: 70px;
+}
+
+.cta-three__text {
+    font-size: 16px;
+    line-height: 34px;
+    color: #81868a;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+.cta-three i {
+    font-size: 64px;
+    color: #2da397;
+}
+
+.cta-three__single-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #012237;
+    line-height: 1.2em;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.cta-three__single {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 33.33%;
+    flex: 1 1 33.33%;
+    max-width: 33.333%;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.cta-three__single-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: -45px;
+    margin-right: -45px;
+    margin-top: -10px;
+    margin-bottom: 50px;
+}
+
+.cta-three .thm-btn {
+    padding: 21.5px 68px;
+}
+.kipso_icons{
+    font-size: 64px;
+    color: #2da397 !important;
+}
+
+@media (max-width: 991px) {
+    .cta-three__image {
+        max-width: 100%;
+    }
+
+    .cta-three__content {
+        padding: 50px 0;
+    }
+}
+@media (max-width: 375px) {
+    .cta-three__single {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 1 50%;
+                flex: 1 1 50%;
+        margin-top: 30px;
+        max-width: 50%;
+      }
+    
+      .cta-three__single-wrap {
+        margin-top: -20px;
+      }
+}

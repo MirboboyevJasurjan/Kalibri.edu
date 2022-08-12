@@ -1,0 +1,139 @@
+.video-two {
+    position: relative;
+    padding: 120px 0;
+    background-image: url(../../images/video-bg-1-1-ad.jpg);
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.video-two:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #012237;
+    opacity: .6;
+}
+
+.video-two .container {
+    position: relative;
+}
+
+
+.video-two__scratch {
+    position: absolute;
+    top: -20%;
+    left: -12%;
+}
+
+.video-two__title {
+    font-size: 60px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -.04em;
+    margin: 0 0 60px;
+}
+
+.video-two .thm-btn {
+    padding: 21.5px 68px;
+    background-color: #012237;
+    color: #fff;
+}
+
+.thm-btn {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    outline: none;
+    background-color: #f16101;
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    padding: 6.5px 27px;
+    transition: all .4s ease;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.video-two__popup {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 156px;
+    height: 156px;
+    background-color: #f16101;
+    border-radius: 50%;
+    position: relative;
+}
+
+.video-two__content {
+    position: relative;
+}
+
+.video-two__popup:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -15px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #f16101;
+    border-radius: 50%;
+    transition: all .4s ease;
+}
+
+.my-auto:hover .video-two__popup:before {
+    left: 0 !important;
+}
+
+.video-two__popup i {
+    font-size: 38px;
+    color: #fff;
+}
+
+.fa-play:before {
+    content: "\F04B";
+}
+
+.video_play-icon {
+    color: white;
+    font-size: 70px;
+}
+
+.video-two .thm-btn:hover {
+    padding: 21.5px 68px;
+    background-color: #fff;
+    color: #012237;
+}
+
+@media (max-width: 992px) {
+    .video-two__scratch {
+        display: none;
+    }
+
+    .video-two__title {
+        font-size: 34px;
+        color: #fff;
+        font-weight: 700;
+        letter-spacing: -.04em;
+        margin: 0 0 60px;
+    }
+    .video-two .container .row div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .video-two .container .row div:last-child{
+        margin-bottom: 15px;
+    }
+}

@@ -1,0 +1,28 @@
+.circle {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #fff;
+  color: black;
+  padding: 20px;
+}
+.circle_item {
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  position: absolute;
+  left: -10px;
+  top: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.circle:hover > .circle_item{
+    left: 0;
+}

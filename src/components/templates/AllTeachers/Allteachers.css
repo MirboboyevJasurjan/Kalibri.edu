@@ -1,0 +1,100 @@
+.team-one {
+    padding-bottom: 90px;
+    padding-top: 120px;
+  }
+  .team-one__single {
+    margin-bottom: 30px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .team-one__single:hover {
+    -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+            box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
+  }
+  .team-one__single:hover .team-one__image > img {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+  }
+  .team-one__image {
+    text-align: center;
+    margin-bottom: -103px;
+  }
+  .team-one__image img {
+    border-radius: 50%;
+    -webkit-transition: -webkit-transform .4s ease;
+    transition: -webkit-transform .4s ease;
+    transition: transform .4s ease;
+    transition: transform .4s ease, -webkit-transform .4s ease;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .team-one__content {
+    text-align: center;
+    border: 2px solid #f1f1f1;
+    padding-bottom: 30px;
+    padding-top: 135px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .team-one__social {
+    background-color: #f1f1f1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 11.5px;
+    padding-bottom: 11.5px;
+  }
+  .team-one__social a {
+    font-size: 14px;
+    color: #81868a;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .team-one__social a:hover {
+    color: #f16101;
+  }
+  .team-one__social a + a {
+    margin-left: 28px;
+  }
+  
+  .team-one__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #012237;
+    margin: 0;
+    margin-bottom: -5px;
+  }
+  .team-one__name a {
+    color: inherit;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+  }
+  .team-one__name a:hover {
+    color: #f16101;
+  }
+  
+  .team-one__designation {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #81868a;
+    letter-spacing: .2em;
+    line-height: 1em;
+    margin: 0;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .team-one__text {
+    margin: 0;
+    font-size: 14px;
+    color: #81868a;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: -10px;
+  }

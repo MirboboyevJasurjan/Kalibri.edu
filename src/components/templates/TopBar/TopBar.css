@@ -1,0 +1,220 @@
+
+.modal-div{
+    padding: 25px;
+}
+.Rbtn-div{
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.Rbtn{
+    border: none;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    color: #012237 !important;
+    text-align: center;
+    width: 50% !important;
+    transition: ease 0.5s all;
+    text-decoration: none !important;
+}
+.RbtnK{
+    color: #012237;
+    /* border-bottom: 2px solid #012237; */
+} 
+.Rbtn:hover{
+    /* border-bottom: 2px solid #012237; */
+    color: #012237;
+}
+.text-fild-name{
+    width: 95% !important;
+    /* margin-left: 18px !important; */
+    text-align: center !important;
+    margin-top: 10px !important;
+    background-color: #FAFCFA;
+    padding: 0 20px;
+    font-weight: 800 !important;
+}
+#standard-basic{
+    font-weight: 500 !important;
+}
+.div-border{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+ }
+ .Fkirish{ 
+    border: none;
+    background-color: #F16101;
+    padding: 8px 15px;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.Fkirish:hover{
+    background-color: #012237;
+}   
+
+/* passwod================================= */
+
+.password{
+    margin-right: 0 !important;
+    width:95% !important;
+    margin-left: 0 !important;
+    margin-top: 20px !important;
+    color: #FAFCFA  !important;
+}
+
+.lab{
+    margin: 0;
+}
+
+/* ============= login ================ */
+.Rbtn-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.Rbtn{
+    border: none;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    color: #012237;
+    width: 50% !important;
+    /* padding: 0 48px; */
+    /* margin-right: 30px; */
+    transition: ease 0.5s all;
+}
+.RbtnK{ 
+    color: #012237;
+    font-size: 20px;
+    /* border-bottom: 2px solid #012237; */
+} 
+.Rbtn:hover{
+    cursor: pointer;
+    /* border-bottom: 2px solid #012237; */
+    color: #012237;
+}
+.Iname{
+    background-color: #f4f8f4;
+    width: 95% !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+}
+.Inamediv{
+    width: 100% !important;
+}
+ 
+.Fkirish{ 
+    border: none;
+    background-color: #F16101;
+    padding: 8px 15px !important;
+    color: #fff;
+    width: 200px !important; 
+    border-radius: 5px;
+    margin-top: 30px;
+    /* margin-left: 100px ; */
+}
+.Fkirish:hover{
+    background-color: #012237;
+}
+.Hparol{
+    border: none;
+    margin-left: 200px;
+    background-color: transparent;
+    font-weight: 400 !important;
+    color: #012237 ;                    
+}
+ 
+.div-border{
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px !important;
+ }
+ 
+ .col22{
+     /* background-color: red; */
+     width: 100%;
+     margin-top: 10px !important;
+     margin-top: 50px;
+     margin: 0;
+     padding: 0;
+ }
+ .classn{
+    margin: 0;
+    padding: 0;
+    margin-left: 15px !important;
+    width: 410px !important;
+ }
+
+.Rrow{
+    padding: 20px !important;
+}
+
+  
+/* ====================== Repassword ===== */
+
+.repass-title{
+    color: #000;
+    text-align: center;
+
+}
+.repass-text{
+    line-height: 20px;
+    color: #000;
+}
+.repass-field{
+    width: 100% !important;
+    margin: 20px 0 !important;
+}
+.tasdiqlash{
+    border: none;
+    background-color: #F16101;
+    border-radius: 5px;
+    color: #fff;
+    padding: 8px 15px;
+    float: right;
+}
+
+.topbar-one {
+    background-color: #022c46;
+  }
+  .topbar-one .container {
+    padding-top: 6.5px;
+    padding-bottom: 6.5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .topbar-one__right, .topbar-one__left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .topbar-one__right a, .topbar-one__left a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    -webkit-transition: color .4s ease;
+    transition: color .4s ease;
+  }
+  .topbar-one__right a:hover, .topbar-one__left a:hover {
+    color: #f16101;
+  }
+  .topbar-one__right a + a, .topbar-one__left a + a {
+    margin-left: 25px;
+  }
+
+  @media (max-width: 992px){
+      .block-title__title{
+          font-size: 40px !important;
+      }
+  }

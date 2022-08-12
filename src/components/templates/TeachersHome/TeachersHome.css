@@ -1,0 +1,28 @@
+.cta-four {
+    padding-top: 120px;
+    padding-bottom: 472px;
+    background-image: url(../../images/teacher-1-1-b.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: relative;
+}
+.cta-four__stripe {
+    position: absolute;
+    top: -2%;
+    left: 10%;
+}
+.cta-four__line {
+    position: absolute;
+    top: 3%;
+    right: 5%;
+}
+.cta-four__text {
+    font-size: 18px;
+    color: #81868a;
+    line-height: 36px;
+    margin: 0;
+}
+.cta-four .block-title__title {
+    margin-bottom: 35px;
+}
