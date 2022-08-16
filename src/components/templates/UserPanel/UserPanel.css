@@ -1,0 +1,26 @@
+.tabPanel{
+    width: 100% !important;
+    height: 100%;
+}
+.css-35zqo5-MuiTabs-root {
+    width: 25% !important;
+    /* height: 80vh !important; */
+}
+.BoxTabs{
+    height: 70vh;
+    padding-top: 50px;
+}
+.MuiBox{
+    width: 90%;
+    margin: 0 auto;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    display: flex;
+    align-items: start !important;
+}
+hr{
+    margin-bottom: 0px !important;
+}
+.course-one{
+    padding-top: 0px !important;
+}

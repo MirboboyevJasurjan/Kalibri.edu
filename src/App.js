@@ -8,6 +8,8 @@ import TeacherDetalisPages from "./pages/TeachersDetailsPage";
 import NewsPagess from "./pages/NewsPage";
 import NewsDetalisPages from "./pages/NewsDetailsPage";
 import ContactPages from "./pages/ContactPage";
+import UsersPage from "./pages/UsersPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +24,7 @@ function App() {
           <Route path="/news" exact component={NewsPagess}></Route>
           <Route path="/newsdetalis" exact component={NewsDetalisPages}></Route>
           <Route path="/contact" exact component={ContactPages} ></Route>
+          <Route path="/userspage" exact component={UsersPage}></Route>
         </Switch>
       </Router>
     </BrowserRouter>

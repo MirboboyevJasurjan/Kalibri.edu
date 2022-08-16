@@ -1,0 +1,20 @@
+.UserBlock{
+    width: 90%;
+    margin: 0 auto;
+}
+.UserBlock{
+    margin-top: 20px;
+}
+.UserAvatar{
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    background: red;  
+    object-fit: cover; 
+}
+.UserName{
+    margin-left: 50px;
+}
+.userInlinePanel{
+    display: flex;
+}

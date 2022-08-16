@@ -113,7 +113,7 @@ function Topbar() {
 
             <form noValidate={true}>
               <FormGroup
-                label="you Name"
+                label="Your Name"
                 id={"name"}
                 register={register("name", {
                   required: {
@@ -237,10 +237,10 @@ function Topbar() {
                     <div className="div-border">
                       <div className="reset-P">
                         <button className="Hparol" type="button">
-                          parolni unutdim
+                          Parolni unutdim
                         </button>
                       </div>
-                      <button className="Fkirish">Kirish</button>
+                      <Link to="/userspage"><button className="Fkirish">Kirish</button></Link>
                     </div>
                   </form>
                 </div>
