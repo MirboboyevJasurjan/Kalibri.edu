@@ -6,6 +6,26 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import './UserPanel.css'
 import Courses from '../Courses/Coureses';
+import team1 from "../../images/team-1-1.jpg";
+import course1 from "../../images/course-1-1.jpg";
+import { Link } from 'react-router-dom';
+import {AiFillHeart} from 'react-icons/ai';
+import {AiOutlineHeart} from 'react-icons/ai';
+import {FaAngleDoubleRight, FaAngleDoubleLeft} from 'react-icons/fa';
+
+
+const menuHandler = () => {
+  const element = document.querySelector('.like_icons1');
+  const element2 = document.querySelector('.like_icons2');
+  
+  if (element.style.opacity === "1") {
+    element.style.opacity = "0";
+    element2.style.opacity = "1";
+  } else {
+    element.style.opacity = "1";
+    element2.style.opacity = "0";
+  }
+}
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -71,7 +91,43 @@ export default function VerticalTabs() {
         <Tab label="Sozlamalar" {...a11yProps(6)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <h2 style={{fontSize:"30px", paddingLeft: "25px", color:"blue"}}>MENING KURSLARIM</h2><br/>
+        <h2 style={{fontSize:"45px", fontFamily: "Roboto", color:"#022c46", fontWeight:"800"}}>MENING KURSLARIM</h2>
+        <div style={{width: "33.3%", padding:"0 12px"}}>
+        <div className="course-one__single">
+              <div className="course-one__image">
+                <img src={course1} alt="" />
+                <i className="like_icons">
+                  <AiOutlineHeart onClick={menuHandler} className="like_icons1" />
+                  <AiFillHeart onClick={menuHandler} className="like_icons2" />
+                </i>
+              </div>
+              <div className="course-one__content">
+                <a href="#none" className="course-one__category">
+                  development
+                </a>
+                <div className="course-one__admin">
+                  <img src={team1} alt="" />
+                  by <Link to="/teachersdetalis">Lou Guerrero</Link>
+                </div>
+                <h2 className="course-one__title">
+                  <Link to="/coursedetalis">New react bootcamp</Link>
+                </h2>
+                
+                <div className="course-one__meta">
+                  <a href="/course-details">
+                    <i className="far fa-clock"></i> 10 Hours
+                  </a>
+                  <a href="/course-details">
+                    <i className="far fa-folder-open"></i> 6 Lectures
+                  </a>
+                  <a href="/course-details">$18</a>
+                </div>
+                <a href="#none" className="course-one__link">
+                  See Preview
+                </a>
+              </div>
+            </div>
+          </div>
         
       </TabPanel>
       <TabPanel value={value} index={1}>

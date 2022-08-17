@@ -3,18 +3,24 @@
     margin: 0 auto;
 }
 .UserBlock{
-    margin-top: 20px;
+   padding: 20px 0;
 }
 .UserAvatar{
     width: 100px; 
     height: 100px;
     border-radius: 50%;
-    background: red;  
     object-fit: cover; 
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 2px 1px 1px #000000;
 }
 .UserName{
     margin-left: 50px;
+    color: #fff;
 }
 .userInlinePanel{
     display: flex;
 }
+.topUserBlock{
+    background-color: #022c46;
+}
+
