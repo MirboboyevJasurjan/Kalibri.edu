@@ -26,42 +26,42 @@ const Teachers = () => {
       team1,
       "Nurlan Karshiev",
       "Frontend Developer",
-      "Nickname : ",
+      "Lorem Ipsum Dolor !",
       ["", "", ""]
     ),
     createTeacher(
       team4,
       "Jamshid Qayumov",
       "Frontend Developer",
-      "Nickname : ",
+      "Lorem Ipsum Dolor !",
       ["", "", ""]
     ),
     createTeacher(
       team1,
       "Islom Jalolov",
       " SMM mentor ",
-      "Nickname : ",
+      "Lorem Ipsum Dolor !",
       ["", "", ""]
     ),
     createTeacher(
       team4,
       "Shukrullo Komiljonov",
       "Backend Developer",
-      "Nickname : ",
+      "Lorem Ipsum Dolor !",
       ["", "", ""]
     ),
     createTeacher(
       team1,
       "Ahmadjon",
       "VFX designer",
-      "Nickname : ",
+      "Lorem Ipsum Dolor !",
       ["", "", ""]
     ),
     createTeacher(
       team4,
       "Farhod",
       "Photo Designer",
-      "Nickname : ",
+      "Lorem Ipsum Dolor !",
       ["", "", ""]
     ),
   ];
@@ -79,7 +79,7 @@ const Teachers = () => {
               </div>
               <div className="team-one__content">
                 <h2 className="team-one__name">
-                  <Link to="/teacher-details">{e.name}</Link>
+                  <Link to="/teachersdetalis">{e.name}</Link>
                 </h2>
                 <p className="team-one__designation">{e.name}</p>
                 <p className="team-one__text">
