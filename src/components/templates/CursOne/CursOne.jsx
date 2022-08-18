@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Swiper from "react-id-swiper";
 // import "swiper/swiper.min.css";
+import '../../../staticCSS/swiper.min.css'
+
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./CursOne.css";

@@ -2,6 +2,8 @@ import React from "react";
 import Swiper from "react-id-swiper";
 import brand1 from "../../images/envato.png";
 // import "swiper/swiper.min.css";
+import '../../../staticCSS/swiper.min.css'
+
 import './BrandTwo.css'
 const BrandsTwo = () => {
   const params = {

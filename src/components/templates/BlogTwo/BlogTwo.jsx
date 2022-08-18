@@ -1,6 +1,7 @@
 import React from "react";
 import Swiper from "react-id-swiper";
 // import "swiper/swiper.min.css";
+import '../../../staticCSS/swiper.min.css'
 import blogTwo1 from "../../images/team-1-1.jpg";
 import blogTwo2 from "../../images/team-1-2.jpg";
 import blogTwo3 from "../../images/team-1-3.jpg";

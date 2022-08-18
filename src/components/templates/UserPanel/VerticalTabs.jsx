@@ -131,7 +131,7 @@ export default function VerticalTabs() {
         
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <h2 style={{fontSize:"45px", fontFamily: "Roboto", color:"#022c46", fontWeight:"800"}}>ALL COURSES</h2>
+        <h2 style={{fontSize:"45px", fontFamily: "Roboto", color:"#022c46", fontWeight:"800"}}>Barcha kurslar</h2>
         <Courses className="MyCourses"/>
       </TabPanel>
       <TabPanel value={value} index={2}>

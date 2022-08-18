@@ -1,6 +1,8 @@
 import React from "react";
 import Swiper from "react-id-swiper";
 // import "swiper/swiper.min.css"
+import '../../../staticCSS/swiper.min.css'
+
 import {FaDesktop} from 'react-icons/fa';
 import {RiMiniProgramLine} from 'react-icons/ri';
 import {BsMusicNoteBeamed} from 'react-icons/bs';

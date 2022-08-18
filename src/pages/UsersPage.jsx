@@ -1,9 +1,10 @@
 import React from 'react'
 import NavOne from '../components/templates/NavOne/NavOne'
 import Topbar from '../components/templates/TopBar/TopBar'
-import user from '../components/images/team-1-1.jpg'
+import user from '../components/images/Nurlan.jpg'
 import VerticalTabs from '../components/templates/UserPanel/VerticalTabs'
-import './UsersPage.css'
+import './UsersPage.css';
+import { Link } from 'react-router-dom'
 
 function UsersPage() {
   return (
@@ -11,7 +12,7 @@ function UsersPage() {
         {/* <Topbar/> */}
         {/* <NavOne /> */}
         <div className='topUserBlock'>
-            <div className='UserBlock'>
+            <div className='UserBlock' style={{display:"flex", justifyContent: "space-between", alignItems: "center"}}>
                 <div className='userInlinePanel'>
                     <img className='UserAvatar' src={user}/>
                     <div className='UserName'>
@@ -37,7 +38,9 @@ function UsersPage() {
                     </div>
                     <div className='rightPanel' style={{width: "75%", height:"100vh", border:" 10px solid blue"}}>s</div>
                 </div> */}
+                  <h2> <Link to="/contact" className="thm-btn thm-btn-n">Chiqish</Link></h2>
             </div>
+          
         </div>
         <hr/>
           <VerticalTabs/>
