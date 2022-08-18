@@ -38,7 +38,10 @@ const Courses = () => {
   const courseCards = [
     createCourse(course1, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
     createCourse(course2, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
-    createCourse(course3, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" )
+    createCourse(course3, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
+    createCourse(course4, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
+    createCourse(course5, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
+    createCourse(course6, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" )
   ];
   return (
     <section className="course-one course-page">
@@ -89,6 +92,22 @@ const Courses = () => {
               </div>
             </div>
           )})}
+        </div>
+        <div className="post-pagination">
+          <a href="#none">
+            <i className="fa fa-angle-double-left"><FaAngleDoubleLeft /></i>
+          </a>
+          <a className="active" href="#none">
+            1
+          </a>
+          <a href="#none">2</a>
+          <a href="#none">3</a>
+          <a href="#none">4</a>
+          <a href="#none">
+            <i className="fa fa-angle-double-right">
+              <FaAngleDoubleRight />
+            </i>
+          </a>
         </div>
       </div>
     </section>
