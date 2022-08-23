@@ -15,16 +15,16 @@ function App() {
     <BrowserRouter>
       <Router>
         <Switch>
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/gallery" exact component={GaleryPages}></Route>
-          <Route path ='/courses' exact component={CoursesPages}></Route>
-          <Route path="/coursedetalis" exact component={CoursesDetalisPages} />
-          <Route path="/teachers" exact component={TeachersPages}></Route>
-          <Route path="/teachersdetalis" exact component={TeacherDetalisPages}></Route>
-          <Route path="/news" exact component={NewsPagess}></Route>
-          <Route path="/newsdetalis" exact component={NewsDetalisPages}></Route>
-          <Route path="/contact" exact component={ContactPages} ></Route>
-          <Route path="/userspage" exact component={UsersPage}></Route>
+          <Route path='/' exact component={Home}></Route>
+          <Route path='/gallery' exact component={GaleryPages}></Route>
+          <Route path='/courses' exact component={CoursesPages}></Route>
+          <Route path='/coursedetalis' exact component={CoursesDetalisPages} />
+          <Route path='/teachers' exact component={TeachersPages}></Route>
+          <Route path='/teachersdetalis' exact component={TeacherDetalisPages}></Route>
+          <Route path='/news' exact component={NewsPagess}></Route>
+          <Route path='/newsdetalis' exact component={NewsDetalisPages}></Route>
+          <Route path='/contact' exact component={ContactPages} ></Route>
+          <Route path='/userspage' exact component={UsersPage}></Route>
         </Switch>
       </Router>
     </BrowserRouter>
