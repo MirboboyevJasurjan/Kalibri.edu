@@ -51,7 +51,7 @@ const Courses = () => {
     <section className="course-one course-page">
       <div className="container">
         <div className="row">
-          {courseCards.map((card, index) => {
+          {courseCards.map((card, i) => {
             return (
             <div className="col-lg-4">
               <div className="course-one__single">
