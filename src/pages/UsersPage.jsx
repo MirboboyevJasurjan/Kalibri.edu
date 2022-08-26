@@ -38,7 +38,7 @@ function UsersPage() {
                     </div>
                     <div className='rightPanel' style={{width: "75%", height:"100vh", border:" 10px solid blue"}}>s</div>
                 </div> */}
-                  <h2> <Link to="/contact" className="thm-btn thm-btn-n">Chiqish</Link></h2>
+                  <h2> <Link to="/" className="thm-btn thm-btn-n">Chiqish</Link></h2>
             </div>
           
         </div>

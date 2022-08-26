@@ -61,7 +61,7 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs(props) {
+export default function VerticalTabs({course=[],courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePrice, CourseTeacher, CourseName, onClickPlus}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -132,18 +132,13 @@ export default function VerticalTabs(props) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <h2 style={{fontSize:"45px", fontFamily: "Roboto", color:"#022c46", fontWeight:"800"}}>Barcha kurslar</h2>
-        <Courses className="MyCourses"/>
-        {course.map((item)=>{
+        {/* <Courses className="MyCourses"/> */}
+        {course.map((obj)=>{
            <div className="col-lg-4">
            <div className="course-one__single">
              <div className="course-one__image">
                <img src={courseImg} alt="" />
-               <i className="like_icons" onClick={onFavorite}>{isFavorite?<AiFillHeart/>:<AiOutlineHeart/>}
-                 {/* <AiOutlineHeart
-                   onClick={menuHandler}
-                   className="like_icons1"
-                 />
-                 <AiFillHeart onClick={menuHandler} className="like_icons2" /> */}
+               <i className="like_icons">
                </i>
              </div>
              <div className="course-one__content">
