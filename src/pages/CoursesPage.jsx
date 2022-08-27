@@ -10,7 +10,7 @@ import course1 from "../components/images/course-1-1.jpg";
 import course2 from "../components/images/course-1-2.jpg";
 import course3 from "../components/images/course-1-3.jpg";
 import '../components/templates/Courses/courses.css'
-
+import {axios} from 'react-axios'
 
 
 // const course = [ 
@@ -39,6 +39,8 @@ import '../components/templates/Courses/courses.css'
 
 function CoursesPage(props) {
     const [course, setCourse] = useState([])
+    const [cartItems, setCartItems] = React.useState([ ]);
+
     const [cartCourse, setCartCourse] = useState([
             {mainImg: course1,
     miniImg: course1,
@@ -47,17 +49,19 @@ function CoursesPage(props) {
     price: 15000,
     teacher:"Jasur",
     courseName:"Frontend"}
-
     ])
     React.useEffect(()=>{
-    fetch('https://6305c1a4697408f7edca7902.mockapi.io/favorites').then((res)=>{
+    fetch('https://6309e6f632499100327d641a.mockapi.io/course').then((res)=>{
         return res.json();
         })
         .then((json)=>{
             setCourse(json);
         })
     },[])
-
+    const onClickPlus = (obj)=>{
+        axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
+        setCartItems(prev=>[...prev, obj]);
+      }
     return (
         <>
             <Topbar />
@@ -78,7 +82,7 @@ function CoursesPage(props) {
                             CoursePrice={item.price}
                             CourseTeacher={item.teacher} 
                             CourseName={item.courseName}
-                            onClickPlus={()=>console.log(item)}
+                            onClickPlus={onClickPlus}
                             onFavorite={()=>console.log("ZAKLADKI")}                            
                             />
 

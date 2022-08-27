@@ -7,14 +7,12 @@ import {
   FaTwitter,
   FaFacebook,
 } from "react-icons/fa";
-import team1 from "../../images/team-1-1.jpg";
-import team2 from "../../images/team-1-2.jpg";
-import team3 from "../../images/team-1-3.jpg";
-import team4 from "../../images/team-1-4.jpg";
-import team5 from "../../images/team-1-1.jpg";
-import team6 from "../../images/team-1-2.jpg";
-import team7 from "../../images/team-1-3.jpg";
-import team8 from "../../images/team-1-4.jpg";
+import abdurahmon from "../../images/abdurahmon.jpg";
+import jamshid from "../../images/jamshid.jpg";
+import islom from "../../images/islom.jpg";
+import Shukrullo from "../../images/shukrullo.jpg";
+import ahmadjon from "../../images/ahmadjon.jpg";
+import farhod from "../../images/farhod.jpg";
 
 const Teachers = () => {
   const createTeacher = (avatar, name, job, about, socials) => {
@@ -23,45 +21,45 @@ const Teachers = () => {
 
   const teachers = [
     createTeacher(
-      team1,
-      "Nurlan Karshiev",
+      abdurahmon,
+      "Sulaymonov Abdurahmon",
       "Frontend Developer",
-      "Lorem Ipsum Dolor !",
+      "JS, React",
       ["", "", ""]
     ),
     createTeacher(
-      team4,
+      jamshid,
       "Jamshid Qayumov",
       "Frontend Developer",
-      "Lorem Ipsum Dolor !",
+      "JS, React, VUE ",
       ["", "", ""]
     ),
     createTeacher(
-      team1,
+      islom,
       "Islom Jalolov",
       " SMM mentor ",
-      "Lorem Ipsum Dolor !",
+      "Instagram, Photoshop, Capcat ",
       ["", "", ""]
     ),
     createTeacher(
-      team4,
+      Shukrullo,
       "Shukrullo Komiljonov",
       "Backend Developer",
-      "Lorem Ipsum Dolor !",
+      "NodeJs, Python ",
       ["", "", ""]
     ),
     createTeacher(
-      team1,
+      ahmadjon,
       "Ahmadjon",
       "VFX designer",
-      "Lorem Ipsum Dolor !",
+      "After Effect, Premiere Pro  ",
       ["", "", ""]
     ),
     createTeacher(
-      team4,
+      farhod,
       "Farhod",
-      "Photo Designer",
-      "Lorem Ipsum Dolor !",
+      "Grafik Designer",
+      "Photoshop, Figma",
       ["", "", ""]
     ),
   ];

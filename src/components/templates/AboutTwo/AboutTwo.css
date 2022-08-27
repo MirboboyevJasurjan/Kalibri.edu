@@ -170,7 +170,12 @@
   font-weight: 400;
   font-size: 30px;
 }
-
+@media screen and (max-width: 1600px) {
+  .about-two__image-dots{
+    left: 80%
+  }
+  
+}
 @media (max-width: 1200px) {
   .about-two__image {
     margin-top: 50px;

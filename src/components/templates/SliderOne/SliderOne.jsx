@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import slidestrech from "../../images/slider-img.png";
 import person2 from "../../images/scratch-1-1.png";
 import { FaGraduationCap } from "react-icons/fa";
 import "./SliderOne.css";
 import { BsArrowRight } from "react-icons/bs";
+import {TweenMax, Expo,Power3} from 'gsap'
 const SliderOne = () => {
   const [swiper, setSwiper] = useState(null);
+
+  let mainText = useRef(null);
+  let mainText2 = useRef(null);
+  let teacherImg = useRef(null);
+
+
+  useEffect(() => {
+    TweenMax.to(mainText, 2.2, { opacity: 1, y: -55, delay: 0.5, ease: Power3.easeOut});
+    TweenMax.to(mainText2, 2.2, { opacity: 1, y: -55, delay: 0.5, ease: Power3.easeOut});
+    TweenMax.to(teacherImg, 2.2, { opacity: 1, x: -55, delay: 0.5, ease: Expo.easeOut });
+ 
+
+
+  
+  }, []);
 
   return (
     <div className="banner-wrapper">
@@ -17,7 +33,7 @@ const SliderOne = () => {
               <div className="container">
                 <div className="aaab">
                   <img src={person2} className="banner-one__person " alt="" />
-                  <img
+                  <img ref={el=>{teacherImg=el}}
                     src={slidestrech}
                     alt=""
                     className="banner-one__scratch"
@@ -26,14 +42,14 @@ const SliderOne = () => {
 
                 <div className="row no-gutters">
                   <div className="col-xl-12">
-                    <h3 className="banner-one__title banner-one__light-color">
+                    <h3 ref={el=>{mainText=el}} style={{opacity: 0}} className="banner-one__title banner-one__light-color">
                       We Can <br />
                       Teach You
                     </h3>
-                    <p className="banner-one__tag-line">
+                    <p ref={el=>{mainText2=el}} style={{opacity: 0}} className="banner-one__tag-line">
                       are you ready to learn?
                     </p>
-                    <a href="#none" className="thm-btn banner-one__btn">
+                    <a  href="#none" className="thm-btn banner-one__btn">
                       Learn More
                     </a>
                   </div>
