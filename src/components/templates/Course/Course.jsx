@@ -6,8 +6,12 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 
 
-function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePrice, CourseTeacher, CourseName, onClickPlus}) {
+function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePrice, CourseTeacher, CourseName, onClickPlus, id}) {
   const [isFavorite, setIsFavorite] = React.useState(false);
+  
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
 
 
     // const onClickButton = () => {
@@ -69,9 +73,9 @@ function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePr
                   </a>
                   <a href="/course-details">{CoursePrice}</a>
                 </div>
-                <a href="#none" className="course-one__link" onClick={onClickPlus}>
+                <Link to={`/coursedetalis/${id}`} onClick={ToTop} className="course-one__link">
                   See Preview
-                </a>
+                </Link>
               </div>
             </div>
         </div>

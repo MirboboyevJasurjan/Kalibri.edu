@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import axios from 'react-axios'
 import team1 from "../../images/team-1-1.jpg";
 import team2 from "../../images/team-1-2.jpg";
 import courseD1 from "../../images/courses-details.jpg";
@@ -12,8 +13,23 @@ import { BsPersonCircle } from 'react-icons/bs';
 import { BsPlayCircle } from 'react-icons/bs';
 import { BsFlag } from 'react-icons/bs';
 import { BsBell } from 'react-icons/bs';
+import Course from "../Course/Course";
 
-const CourseDetails = () => {
+const CourseDetails = (props) => {
+  const [courseInfo, setCourseInfo] = useState([])
+  const id = window.location.pathname.split("/").slice(-1);
+
+    
+  useEffect(() => {
+    const getCourseInfo = async () => {
+      const response = await axios.get(
+        `https://6309e6f632499100327d641a.mockapi.io/course/${id}`
+        );
+            
+        setCourseInfo(response.data);
+     };
+    getCourseInfo();
+  }, []);
   return (
     <section className="course-details">
       <div className="container">
@@ -22,18 +38,18 @@ const CourseDetails = () => {
             <div className="course-details__content">
               <p className="course-details__author">
                 <img src={team1} alt="" />
-                by <a href="#none">Addie Walters</a>
+                by <a href="#none">Addie Walters{courseInfo.teacher}</a>
               </p>
 
               <div className="course-details__top">
                 <div className="course-details__top-left">
                   <h2 className="course-details__title">
-                    Improve editing skills
+                  Tahrirlash mahoratini oshiring
                   </h2>
                 </div>
                 <div className="course-details__top-right">
                   <a href="#none" className="course-one__category">
-                    marketing
+                    Marketing
                   </a>
                 </div>
               </div>
@@ -49,7 +65,7 @@ const CourseDetails = () => {
                     data-toggle="tab"
                     href="#overview"
                   >
-                    Overview
+                    Umumiy koʻrinish
                   </a>
                 </li>
                 <li>
@@ -59,12 +75,13 @@ const CourseDetails = () => {
                     data-toggle="tab"
                     href="#curriculum"
                   >
-                    Curriculum
+                   O'quv dasturi
+
                   </a>
                 </li>
                 <li>
                   <a className="" role="tab" data-toggle="tab" href="#review">
-                    Reviews
+                  Sharhlar
                   </a>
                 </li>
               </ul>
@@ -92,7 +109,7 @@ const CourseDetails = () => {
                   id="curriculum"
                 >
                   <h3 className="course-details__tab-title">
-                    Starting beginners level course
+                  Boshlang'ich daraja kursi
                   </h3>
                   <br />
                   <p className="course-details__tab-text">
@@ -108,11 +125,11 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon video-icon">
                           <i className="fas fa-play"></i>
                         </div>
-                        <a href="#none">Introduction to Editing</a>{" "}
-                        <span>Preview</span>
+                        <a href="#none">Tahririyatga kirish</a>{" "}
+                        <span>Ko‘rib chiqish</span>
                       </div>
                       <div className="course-details__curriculum-list-right">
-                        16 minutes
+                        16 daqiqa
                       </div>
                     </li>
                     <li>
@@ -120,11 +137,11 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon video-icon">
                           <i className="fas fa-play"></i>
                         </div>
-                        <a href="#none">Overview of Editing</a>{" "}
-                        <span>Preview</span>
+                        <a href="#none">Tahrirlashning umumiy ko'rinishi</a>{" "}
+                        <span>Ko‘rib chiqish</span>
                       </div>
                       <div className="course-details__curriculum-list-right">
-                        10 minutes
+                        10 daqiqa
                       </div>
                     </li>
                     <li>
@@ -132,7 +149,7 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon file-icon">
                           <i className="fas fa-folder"></i>
                         </div>
-                        <a href="#none">Basic Editing Technology</a>
+                        <a href="#none">Asosiy tahrirlash texnologiyasi</a>
                       </div>
                     </li>
                     <li>
@@ -140,17 +157,17 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon quiz-icon">
                           <i className="fas fa-comment"></i>
                         </div>
-                        <a href="#none">Quiz</a>
+                        <a href="#none">Viktorina</a>
                       </div>
                       <div className="course-details__curriculum-list-right">
-                        6 questions
+                      6 ta savol
                       </div>
                     </li>
                   </ul>
                   <br />
                   <br />
                   <h3 className="course-details__tab-title">
-                    Intermediate Level
+                  Oraliq daraja
                   </h3>
                   <br />
                   <p className="course-details__tab-text">
@@ -166,11 +183,11 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon video-icon">
                           <i className="fas fa-play"></i>
                         </div>
-                        <a href="#none">Introduction to Editing</a>
-                        <span>Preview</span>
+                        <a href="#none">Tahririyatga kirish</a>
+                        <span>Ko‘rib chiqish</span>
                       </div>
                       <div className="course-details__curriculum-list-right">
-                        16 minutes
+                        16 daqiqa
                       </div>
                     </li>
                     <li>
@@ -178,7 +195,7 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon file-icon">
                           <i className="fas fa-folder"></i>
                         </div>
-                        <a href="#none">Basic Editing Technology</a>
+                        <a href="#none">Asosiy tahrirlash texnologiyasi</a>
                       </div>
                     </li>
                     <li>
@@ -186,10 +203,10 @@ const CourseDetails = () => {
                         <div className="course-details__meta-icon quiz-icon">
                           <i className="fas fa-comment"></i>
                         </div>
-                        <a href="#none">Quiz</a>
+                        <a href="#none">Viktorina</a>
                       </div>
                       <div className="course-details__curriculum-list-right">
-                        6 questions
+                        6 ta savol
                       </div>
                     </li>
                   </ul>
@@ -204,7 +221,7 @@ const CourseDetails = () => {
                       <div className="course-details__progress my-auto">
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                            Excellent
+                            A'lo
                           </p>
                           <div className="course-details__progress-bar">
                             <span style={{ width: `95%` }}></span>
@@ -213,7 +230,7 @@ const CourseDetails = () => {
                         </div>
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                            Very Good
+                          Juda yaxshi
                           </p>
                           <div className="course-details__progress-bar">
                             <span style={{ width: `65%` }}></span>
@@ -222,7 +239,7 @@ const CourseDetails = () => {
                         </div>
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                            Average
+                          O'rtacha
                           </p>
                           <div className="course-details__progress-bar">
                             <span style={{ width: `33%` }}></span>
@@ -241,7 +258,7 @@ const CourseDetails = () => {
                         </div>
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                            Terrible
+                          Qo'rqinchli
                           </p>
                           <div className="course-details__progress-bar">
                             <span
@@ -264,7 +281,7 @@ const CourseDetails = () => {
                           <i className="fas fa-star-half"></i>
                         </div>
                         <p className="course-details__review-text">
-                          30 reviews
+                        30 ta sharh
                         </p>
                       </div>
                     </div>
@@ -332,9 +349,9 @@ const CourseDetails = () => {
                     </div>
                   </div>
                   <form action="#" className="course-details__comment-form">
-                    <h2 className="course-details__title">Add a review</h2>
+                    <h2 className="course-details__title">Sharh qo'shing</h2>
                     <p className="course-details__comment-form-text">
-                      Rate this Course?{" "}
+                      Ushbu kursni baholaysizmi??{" "}
                       <a href="#give-star" aria-label="review stars">
                         <i className="fas fa-star"></i>
                       </a>
@@ -362,7 +379,7 @@ const CourseDetails = () => {
                           type="submit"
                           className="thm-btn course-details__comment-form-btn"
                         >
-                          Leave a Review
+                          Sharh qoldiring
                         </button>
                       </div>
                     </div>
@@ -373,10 +390,10 @@ const CourseDetails = () => {
           </div>
           <div className="col-lg-4">
             <div className="course-details__price">
-              <p className="course-details__price-text">Course price </p>
+              <p className="course-details__price-text">Kurs narxi</p>
               <p className="course-details__price-amount">$18.00</p>
               <a href="#none" className="thm-btn course-details__price-btn">
-                Buy This Course
+              Ushbu kursni sotib oling
               </a>
             </div>
 
@@ -385,48 +402,48 @@ const CourseDetails = () => {
                 <span className="course-details__meta-icon">
                   <AiOutlineClockCircle />
                 </span>
-                Durations: <span>10 hours</span>
+                Davomiyligi: <span>10 soat</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
                   <AiFillFolderOpen />
                 </span>
-                Lectures: <span>6</span>
+                Ma'ruzalar: <span>6</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
                   <BsPersonCircle />
                 </span>
-                Students: <span>Max 4</span>
+                O'quvchilar: <span>Max 4</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
                   <BsPlayCircle />
                 </span>
-                Video: <span>8 hours</span>
+                Darsliklar: <span>8 soat</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
                   <BsFlag />
                 </span>
-                Skill Level: <span>Advanced</span>
+                Malaka darajasi: <span>Murakkab</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
                   <BsBell />
                 </span>
-                Language: <span>English</span>
+                Til: <span>Uzbek</span>
               </a>
             </div>
             <div className="course-details__list">
-              <h2 className="course-details__list-title">New Courses</h2>
+              <h2 className="course-details__list-title">Yangi Kurslar</h2>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
                   <img src={lcImage1} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
-                    by <span>Lydia Byrd</span>
+                    by <span>Sulaymonov Abdurahmon</span>
                   </a>
                   <h3>
                     <a href="#none">Marketing strategies</a>
@@ -439,7 +456,7 @@ const CourseDetails = () => {
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
-                    by <span>Lydia Byrd</span>
+                    by <span>Qayumov Jamshid</span>
                   </a>
                   <h3>
                     <a href="#none">Marketing strategies</a>
@@ -452,7 +469,7 @@ const CourseDetails = () => {
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
-                    by <span>Lydia Byrd</span>
+                    by <span>Komiljonov Shukrullo</span>
                   </a>
                   <h3>
                     <a href="#none">Marketing strategies</a>

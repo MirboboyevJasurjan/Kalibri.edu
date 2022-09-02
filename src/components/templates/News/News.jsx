@@ -12,17 +12,17 @@ import newsimg5 from '../../images/newimgs/newimg5.jpg'
 import newsimg6 from '../../images/newimgs/newimg6.jpg'
 
 
-const createNews = (img, details, blogOneText) => {
-  return { img, details, blogOneText };
+const createNews = (img, details, blogOneText, id) => {
+  return { img, details, blogOneText, id};
 };
 
 const NewsCards = [
-  createNews(newsimg1, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros." ),
-  createNews(newsimg2, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros." ),
-  createNews(newsimg3, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros." ),
-  createNews(newsimg4, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros." ),
-  createNews(newsimg5, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros." ),
-  createNews(newsimg6, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros." ),
+  createNews(newsimg1, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 1 ),
+  createNews(newsimg2, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 2 ),
+  createNews(newsimg3, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 3 ),
+  createNews(newsimg4, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 4 ),
+  createNews(newsimg5, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 5),
+  createNews(newsimg6, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 6 ),
 
 ];
 
@@ -37,7 +37,7 @@ const News = () => {
            <div className="blog-one__single">
              <div className="blog-one__image">
                <img src={news.img} alt="" />
-               <Link to="/newsdetalis"  className="blog-one__plus" href="news-details.html">
+               <Link to={`/newsdetalis/${news.id}`}  className="blog-one__plus" href="news-details.html">
                  <i className="kipso-icon-plus-symbol">
                    <BsFilePlus />
                  </i>
@@ -85,7 +85,7 @@ const News = () => {
                 {news.blogOneText}
                
                </p>
-               <Link to="/newsdetalis"   className="blog-one__link">
+               <Link to={`/newsdetalis/${news.id}`}   className="blog-one__link">
                  Read More
                </Link>
              </div>

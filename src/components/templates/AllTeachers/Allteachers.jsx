@@ -15,12 +15,16 @@ import ahmadjon from "../../images/ahmadjon.jpg";
 import farhod from "../../images/farhod.jpg";
 
 const Teachers = () => {
-  const createTeacher = (avatar, name, job, about, socials) => {
-    return { avatar, name, job, about, socials };
+  const createTeacher = (id,avatar, name, job, about, socials) => {
+    return { id, avatar, name, job, about, socials };
   };
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
 
   const teachers = [
     createTeacher(
+      "teacher1",
       abdurahmon,
       "Sulaymonov Abdurahmon",
       "Frontend Developer",
@@ -28,6 +32,7 @@ const Teachers = () => {
       ["", "", ""]
     ),
     createTeacher(
+      "teacher2",
       jamshid,
       "Jamshid Qayumov",
       "Frontend Developer",
@@ -35,6 +40,7 @@ const Teachers = () => {
       ["", "", ""]
     ),
     createTeacher(
+      "teacher3",
       islom,
       "Islom Jalolov",
       " SMM mentor ",
@@ -42,6 +48,7 @@ const Teachers = () => {
       ["", "", ""]
     ),
     createTeacher(
+      "teacher4",
       Shukrullo,
       "Shukrullo Komiljonov",
       "Backend Developer",
@@ -49,6 +56,7 @@ const Teachers = () => {
       ["", "", ""]
     ),
     createTeacher(
+      "teacher5",
       ahmadjon,
       "Ahmadjon",
       "VFX designer",
@@ -56,6 +64,7 @@ const Teachers = () => {
       ["", "", ""]
     ),
     createTeacher(
+      "teacher6",
       farhod,
       "Farhod",
       "Grafik Designer",
@@ -77,7 +86,7 @@ const Teachers = () => {
               </div>
               <div className="team-one__content">
                 <h2 className="team-one__name">
-                  <Link to="/teachersdetalis">{e.name}</Link>
+                  <Link to={`/teachersdetalis/${e.id}`} onClick={ToTop}>{e.name}</Link>
                 </h2>
                 <p className="team-one__designation">{e.name}</p>
                 <p className="team-one__text">

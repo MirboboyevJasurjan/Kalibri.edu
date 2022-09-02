@@ -66,7 +66,7 @@ function CoursesPage(props) {
         <>
             <Topbar />
             <NavOne />
-            <Banner>COURSES</Banner>
+            <Banner>Kurslar</Banner>
             {/* <Courses /> */}
             <section className="course-one course-page">
                 <div className="container">
@@ -83,7 +83,8 @@ function CoursesPage(props) {
                             CourseTeacher={item.teacher} 
                             CourseName={item.courseName}
                             onClickPlus={onClickPlus}
-                            onFavorite={()=>console.log("ZAKLADKI")}                            
+                            onFavorite={()=>console.log("ZAKLADKI")}
+                            id={item.id}                          
                             />
 
                         ))}

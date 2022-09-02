@@ -43,11 +43,11 @@ const SliderOne = () => {
                 <div className="row no-gutters">
                   <div className="col-xl-12">
                     <h3 ref={el=>{mainText=el}} style={{opacity: 0}} className="banner-one__title banner-one__light-color">
-                      We Can <br />
-                      Teach You
+                      Biz bilan <br />
+                      O'rganing
                     </h3>
                     <p ref={el=>{mainText2=el}} style={{opacity: 0}} className="banner-one__tag-line">
-                      are you ready to learn?
+                    O'rganishga tayyormisiz?
                     </p>
                     <a  href="#none" className="thm-btn banner-one__btn">
                       Learn More
