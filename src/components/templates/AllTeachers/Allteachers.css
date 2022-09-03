@@ -21,6 +21,7 @@
   }
   .team-one__image img {
     border-radius: 50%;
+    width: 206px;
     -webkit-transition: -webkit-transform .4s ease;
     transition: -webkit-transform .4s ease;
     transition: transform .4s ease;

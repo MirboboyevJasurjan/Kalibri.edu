@@ -61,7 +61,7 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs({course=[],courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePrice, CourseTeacher, CourseName, onClickPlus}) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -132,7 +132,49 @@ export default function VerticalTabs() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <h2 style={{fontSize:"45px", fontFamily: "Roboto", color:"#022c46", fontWeight:"800"}}>Barcha kurslar</h2>
-        <Courses className="MyCourses"/>
+        {/* <Courses className="MyCourses"/> */}
+        {course.map((obj)=>{
+           <div className="col-lg-4">
+           <div className="course-one__single">
+             <div className="course-one__image">
+               <img src={courseImg} alt="" />
+               <i className="like_icons">
+               </i>
+             </div>
+             <div className="course-one__content">
+               <a href="#none" className="course-one__category">
+                 development
+               </a>
+               <div className="course-one__admin">
+                 <img src={courseMiniImg} alt="" />
+                 by <Link to="/teachersdetalis">{CourseTeacher}</Link>
+               </div>
+               <h2 className="course-one__title">
+                 <Link to="/coursedetalis">{CourseName}</Link>
+               </h2>
+
+               <div className="course-one__meta">
+                 <a href="/course-details">
+                   <i className="far fa-clock"></i> {CourseHours}
+                 </a>
+                 <a href="/course-details">
+                   <i className="far fa-folder-open"></i> {CourseLectures}
+                 </a>
+                 <a href="/course-details">{CoursePrice}</a>
+               </div>
+               <a href="#none" className="course-one__link" onClick={onClickPlus}>
+                 See Preview
+               </a>
+             </div>
+           </div>
+       </div>
+        })}
+
+
+
+
+
+
       </TabPanel>
       <TabPanel value={value} index={2}>
         <h2 style={{fontSize:"50px", color:"green"}}>SIZ</h2>

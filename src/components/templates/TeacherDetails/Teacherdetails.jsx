@@ -6,6 +6,8 @@ import teamd1 from "../../images/team-d-1.jpg";
 import { BsInstagram } from "react-icons/bs";
 import { BsTelegram } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
+import jamshid from "../../images/jamshid.jpg";
+
 
 const TeachersDetalis = () => {
   return (
@@ -81,11 +83,11 @@ const TeachersDetalis = () => {
           <div className="col-lg-6">
             <div className="team-one__single">
               <div className="team-one__image">
-                <img src={teamd1} alt="" />
+                <img src={jamshid} alt="" />
               </div>
               <div className="team-one__content">
                 <h2 className="team-one__name">
-                  <a href="/team-details">Adelaide Hunter</a>
+                  <a href="/team-details">Jamshid Qayumov</a>
                 </h2>
                 <p className="team-one__designation">Teacher</p>
               </div>

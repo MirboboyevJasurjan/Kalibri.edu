@@ -72,46 +72,46 @@ const NavOne = () => {
           <div className={click ? "d-none" : "main-navigation"}>
             <ul className="navigation-box ">
               <li >
-                <Link to="/">Home</Link>
+                <Link to="/">Bosh sahifa</Link>
               </li>
               <li >
-                <Link to="/gallery">Gallery</Link>
+                <Link to="/gallery">Galereya</Link>
               </li>
               <li>
-                <Link to="/courses">Courses</Link>
+                <Link to="/courses">Kurslar</Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link to="/courses">Courses</Link>
+                    <Link to="/courses">Kurslar</Link>
                   </li>
                   <li>
-                    <Link to="/coursedetails">Courses Details</Link>
+                    <Link to="/coursedetalis">Courses Details</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/teachers">Teachers</Link>
+                <Link to="/teachers">Ustozlar</Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link to="/teachers">Teachers</Link>
+                    <Link to="/teachers">Ustozlar</Link>
                   </li>
                   <li>
-                    <Link to="/teachersdetalis">Teachers Details</Link>
+                    <Link to="/teachersdetalis">Ustozlar haqida</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/news">News</Link>
+                <Link to="/news">Yangiliklar</Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link to="/news">News Page</Link>
+                    <Link to="/news">Yangiliklar sahifasi</Link>
                   </li>
                   <li>
-                    <Link to="/newsdetalis">News Details</Link>
+                    <Link to="/newsdetalis">Yangiliklar haqida</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact">Kontaktlar</Link>
               </li>
             </ul>
             {/* <div className="right-side-box">

@@ -7,61 +7,68 @@ import {
   FaTwitter,
   FaFacebook,
 } from "react-icons/fa";
-import team1 from "../../images/team-1-1.jpg";
-import team2 from "../../images/team-1-2.jpg";
-import team3 from "../../images/team-1-3.jpg";
-import team4 from "../../images/team-1-4.jpg";
-import team5 from "../../images/team-1-1.jpg";
-import team6 from "../../images/team-1-2.jpg";
-import team7 from "../../images/team-1-3.jpg";
-import team8 from "../../images/team-1-4.jpg";
+import abdurahmon from "../../images/abdurahmon.jpg";
+import jamshid from "../../images/jamshid.jpg";
+import islom from "../../images/islom.jpg";
+import Shukrullo from "../../images/shukrullo.jpg";
+import ahmadjon from "../../images/ahmadjon.jpg";
+import farhod from "../../images/farhod.jpg";
 
 const Teachers = () => {
-  const createTeacher = (avatar, name, job, about, socials) => {
-    return { avatar, name, job, about, socials };
+  const createTeacher = (id,avatar, name, job, about, socials) => {
+    return { id, avatar, name, job, about, socials };
   };
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
 
   const teachers = [
     createTeacher(
-      team1,
-      "Nurlan Karshiev",
+      "teacher1",
+      abdurahmon,
+      "Sulaymonov Abdurahmon",
       "Frontend Developer",
-      "Lorem Ipsum Dolor !",
+      "JS, React",
       ["", "", ""]
     ),
     createTeacher(
-      team4,
+      "teacher2",
+      jamshid,
       "Jamshid Qayumov",
       "Frontend Developer",
-      "Lorem Ipsum Dolor !",
+      "JS, React, VUE ",
       ["", "", ""]
     ),
     createTeacher(
-      team1,
+      "teacher3",
+      islom,
       "Islom Jalolov",
       " SMM mentor ",
-      "Lorem Ipsum Dolor !",
+      "Instagram, Photoshop, Capcat ",
       ["", "", ""]
     ),
     createTeacher(
-      team4,
+      "teacher4",
+      Shukrullo,
       "Shukrullo Komiljonov",
       "Backend Developer",
-      "Lorem Ipsum Dolor !",
+      "NodeJs, Python ",
       ["", "", ""]
     ),
     createTeacher(
-      team1,
+      "teacher5",
+      ahmadjon,
       "Ahmadjon",
       "VFX designer",
-      "Lorem Ipsum Dolor !",
+      "After Effect, Premiere Pro  ",
       ["", "", ""]
     ),
     createTeacher(
-      team4,
+      "teacher6",
+      farhod,
       "Farhod",
-      "Photo Designer",
-      "Lorem Ipsum Dolor !",
+      "Grafik Designer",
+      "Photoshop, Figma",
       ["", "", ""]
     ),
   ];
@@ -79,7 +86,7 @@ const Teachers = () => {
               </div>
               <div className="team-one__content">
                 <h2 className="team-one__name">
-                  <Link to="/teachersdetalis">{e.name}</Link>
+                  <Link to={`/teachersdetalis/${e.id}`} onClick={ToTop}>{e.name}</Link>
                 </h2>
                 <p className="team-one__designation">{e.name}</p>
                 <p className="team-one__text">

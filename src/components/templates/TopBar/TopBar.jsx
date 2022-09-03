@@ -108,7 +108,7 @@ function Topbar() {
         >
           <div className="modal-div">
             <div className="Rbtn-div">
-              <Link className="Rbtn RbtnK">Ro'yhattan o'tish</Link>
+              <Link to="/" className="Rbtn RbtnK">Ro'yhattan o'tish</Link>
             </div>
 
             <form noValidate={true}>
@@ -174,7 +174,7 @@ function Topbar() {
               <div className="col-md-12 Rbox">
                 <div className="asa">
                   <div className="Rbtn-div">
-                    <Link className="Rbtn RbtnK">Kirish</Link>
+                    <Link to="/userspage" className="Rbtn RbtnK">Kirish</Link>
                   </div>
                   <form
                     noValidate

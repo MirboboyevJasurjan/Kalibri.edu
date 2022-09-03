@@ -18,11 +18,11 @@ function App() {
           <Route path='/' exact component={Home}></Route>
           <Route path='/gallery' exact component={GaleryPages}></Route>
           <Route path='/courses' exact component={CoursesPages}></Route>
-          <Route path='/coursedetails/:id' exact component={CoursesDetalisPages} />
+          <Route path='/coursedetalis/:course_id' exact component={CoursesDetalisPages} />
           <Route path='/teachers' exact component={TeachersPages}></Route>
-          <Route path='/teachersdetails' exact component={TeacherDetalisPages}></Route>
+          <Route path='/teachersdetalis/:teachers_id' exact component={TeacherDetalisPages}></Route>
           <Route path='/news' exact component={NewsPagess}></Route>
-          <Route path='/newsdetails' exact component={NewsDetalisPages}></Route>
+          <Route path='/newsdetalis/:news_id' exact component={NewsDetalisPages}></Route>
           <Route path='/contact' exact component={ContactPages} ></Route>
           <Route path='/userspage' exact component={UsersPage}></Route>
         </Switch>

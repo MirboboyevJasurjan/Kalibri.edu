@@ -22,6 +22,10 @@ import team6 from "../../images/team-1-2.jpg";
 // const courcesss = courseCards; 
 
 const Courses = () => {
+  const [isFavorite, setIsFavorite] = React.useState(false);
+  const onClickFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
   const menuHandler = () => {
     const element = document.querySelector(".like_icons1");
     const element2 = document.querySelector(".like_icons2");
@@ -58,15 +62,15 @@ const Courses = () => {
               <div className="course-one__single">
                 <div className="course-one__image">
                   <img src={card.img} alt="" />
-                  <i className="like_icons">
-                    <AiOutlineHeart
+                  <i className="like_icons" onClick={onClickFavorite}>{isFavorite?<AiOutlineHeart
                       onClick={menuHandler}
                       className="like_icons1"
-                    />
+                    />:
                     <AiFillHeart
                       onClick={menuHandler}
                       className="like_icons2"
-                    />
+                    />}
+                  
                   </i>
                 </div>
                 <div className="course-one__content">
