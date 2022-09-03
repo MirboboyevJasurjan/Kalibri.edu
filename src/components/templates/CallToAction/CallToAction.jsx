@@ -15,7 +15,7 @@ class CallToActionThree extends Component {
               <div className="cta-three__content">
                 <div className="block-title text-left">
                   <h2 className="block-title__title">
-                    Benefits of learning with kipso
+                  'Kalibri Education' <br /> bilan o'rganishning afzalliklari
                   </h2>
                 </div>
                 <p className="cta-three__text">

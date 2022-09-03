@@ -1,0 +1,73 @@
+{
+    "courses": [
+        {
+            "id": "1",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        },
+        {
+            "id": "1",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        },
+        {
+            "id": "2",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        },
+        {
+            "id": "3",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        },
+        {
+            "id": "4",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        },
+        {
+            "id": "5",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        },{
+            "id": "6",
+            "image": " ",
+            "tag": "Development",
+            "author": "Nurlan Karshiev",
+            "title": "New React Bootcamp",
+            "hours":"10 Hours",
+            "lectures":"6 lectures",
+            "price":"1100$"
+        }
+    ]
+}

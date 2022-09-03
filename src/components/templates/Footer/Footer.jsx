@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaPinterest, FaTwitter, FaArrowUp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaPinterest, FaTelegram, FaArrowUp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import footer1 from "../../images/galarey/galarey1.jpg";
 import footer2 from "../../images/galarey/galarey2.jpg";
@@ -135,7 +135,7 @@ const Footer = () => {
         <div className="site-footer__bottom">
           <div className="container ">
             <p className="site-footer__copy">
-              <span> &copy; Copyright 2020 by </span><a href="#none" className="layerdrops">QWERTY Al-FAJR </a>
+              <span> &copy; Copyright 2022 by </span><a target="_blank" href="#none" className="layerdrops">QWERTY Al-FAJR </a>
             </p>
             <div className="site-footer__social">
               <div
@@ -148,16 +148,16 @@ const Footer = () => {
                 <span className="FaArrowUp"><FaArrowUp /></span>
               </div>
 
-              <a href="#none">
-                <FaTwitter />
+              <a target="_blank" href="https://t.me/kalibri_education">
+                <FaTelegram />
               </a>
-              <a href="#none">
+              <a target="_blank" href="#none">
                 <FaFacebook />
               </a>
-              <a href="#none">
+              <a target="_blank" href="#none">
                 <FaPinterest />
               </a>
-              <a href="#none">
+              <a target="_blank" href="https://instagram.com/kalibri_edu">
                 <FaInstagram />
               </a>
             </div>

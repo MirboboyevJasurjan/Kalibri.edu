@@ -37,7 +37,7 @@ const BrandsTwo = () => {
     <section className="brand-two ">
       <div className="container overflow-hidden">
         <div className="block-title">
-          <h2 className="block-title__title">Our company & partners</h2>
+          <h2 className="block-title__title">Bizning hamkorlar</h2>
         </div>
         <div className="brand-one__carousel">
           <Swiper {...params}>

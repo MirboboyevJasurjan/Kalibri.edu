@@ -44,7 +44,7 @@ const BlogTwo = () => {
       <div className="container overflow-y-hidden">
         <div className="block-title text-center">
           <h2 className="block-title__title">
-            Our latest news <br />& articles
+            So'ngi yangiliklar <br /> va maqolalar
           </h2>
         </div>
         <div className="blog-two__carousel">

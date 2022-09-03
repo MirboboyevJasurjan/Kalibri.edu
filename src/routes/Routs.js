@@ -1,13 +1,14 @@
 import React from 'react'
-import { Switch,Route} from 'react-router-dom'
-   
+import { Switch,Route,Routes} from 'react-router-dom'
+import {CoursesDetailsPage} from '../pages/CoursesDetailsPage';
 export default function Routs() {
   return (
     <div>
-        <Switch>
+        <Routes>
              
-            <Route path="/"  ></Route>
-        </Switch>
+            <Route path="/"  ></Route>  
+            <Route path="coursedetails/id" name='coursedetail'  component={CoursesDetailsPage} ></Route>
+        </Routes>
     </div>
   )
 }

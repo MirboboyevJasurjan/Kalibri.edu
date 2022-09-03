@@ -69,8 +69,8 @@ const CourseOne = () => {
         <div className="container">
           <div className="block-title mb-0">
             <h2 className="block-title__title">
-              Explore our <br />
-              popular courses
+              Bizning kurslar  <br />
+              bilan tanishing
             </h2>
           </div>
         </div>
@@ -105,7 +105,7 @@ const CourseOne = () => {
                       by <Link to="/teachersdetalis">Lou Guerrero</Link>
                     </div>
                     <h2 className="course-one__title">
-                      <Link to="/coursedetalis">New react bootcamp</Link>
+                      <Link to="/coursedetails">New react bootcamp</Link>
                     </h2>
 
                     <div className="course-one__meta">
@@ -147,7 +147,7 @@ const CourseOne = () => {
                       by <Link to="/teachersdetalis">Cora Diaz</Link>
                     </div>
                     <h2 className="course-one__title">
-                      <Link to="/coursedetalis">Improve editing sk</Link>
+                      <Link to="/coursedetails">Improve editing sk</Link>
                     </h2>
                     <div className="course-one__meta">
                       <a href="/course-details">
@@ -182,7 +182,7 @@ const CourseOne = () => {
                       by <Link to="/teachersdetalis">Ruth Becker</Link>
                     </div>
                     <h2 className="course-one__title">
-                      <Link to="/coursedetalis">Marketing strategi</Link>
+                      <Link to="/coursedetails">Marketing strategi</Link>
                     </h2>
                     <div className="course-one__meta">
                       <a href="/course-details">
@@ -217,7 +217,7 @@ const CourseOne = () => {
                       by <Link to="/teachersdetalis">Ernest Rodriquez</Link>
                     </div>
                     <h2 className="course-one__title">
-                      <Link to="/coursedetalis">Basics of photogra</Link>
+                      <Link to="/coursedetails">Basics of photogra</Link>
                     </h2>
                     <div className="course-one__meta">
                       <a href="/course-details">
@@ -252,7 +252,7 @@ const CourseOne = () => {
                       by <Link to="/teachersdetalis">Isabella Stanley</Link>
                     </div>
                     <h2 className="course-one__title">
-                      <Link to="/coursedetalis">Affiliate bootcamp</Link>
+                      <Link to="/coursedetails">Affiliate bootcamp</Link>
                     </h2>
                     <div className="course-one__meta">
                       <a href="/course-details">
@@ -287,7 +287,7 @@ const CourseOne = () => {
                       by <Link to="/teachersdetalis">Katherine Collins</Link>
                     </div>
                     <h2 className="course-one__title">
-                      <Link to="/coursedetalis">Healthy workout ti</Link>
+                      <Link to="/coursedetails">Healthy workout ti</Link>
                     </h2>
                     <div className="course-one__meta">
                       <a href="/course-details">

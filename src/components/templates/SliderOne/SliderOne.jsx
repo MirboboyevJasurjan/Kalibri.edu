@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import slidestrech from "../../images/slider-img.png";
+// import slidestrech1 from "../../images/uo.jpg";
 import person2 from "../../images/scratch-1-1.png";
 import { FaGraduationCap } from "react-icons/fa";
 import "./SliderOne.css";
@@ -27,14 +28,14 @@ const SliderOne = () => {
                 <div className="row no-gutters">
                   <div className="col-xl-12">
                     <h3 className="banner-one__title banner-one__light-color">
-                      We Can <br />
-                      Teach You
+                      Biz sizga <br />
+                      'Конкрет' bilim beramiz
                     </h3>
                     <p className="banner-one__tag-line">
-                      are you ready to learn?
+                      Tayyormisiz ?
                     </p>
                     <a href="#none" className="thm-btn banner-one__btn">
-                      Learn More
+                      Ko'proq ma'lumot
                     </a>
                   </div>
                 </div>
@@ -51,7 +52,7 @@ const SliderOne = () => {
         </div>
         <div className="banner-one__cta-title">
           <h3 className="banner-one__cta-text">
-            <a href="#none">Read how we encourage our students to learn</a>
+            <a href="#none">Talabalarimizni qanday o'qitmoqdamiz</a>
           </h3>
         </div>
         <div className="banner-one__cta-link">

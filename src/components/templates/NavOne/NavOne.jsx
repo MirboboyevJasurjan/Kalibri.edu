@@ -84,7 +84,7 @@ const NavOne = () => {
                     <Link to="/courses">Courses</Link>
                   </li>
                   <li>
-                    <Link to="/coursedetalis">Courses Details</Link>
+                    <Link to="/coursedetails">Courses Details</Link>
                   </li>
                 </ul>
               </li>
@@ -155,7 +155,7 @@ const NavOne = () => {
                     <Link to="/courses">Courses</Link>
                   </li>
                   <li>
-                    <Link to="/coursedetalis">Courses Details</Link>
+                    <Link to="/coursedetails">Courses Details</Link>
                   </li>
                 </ul>
               </li>

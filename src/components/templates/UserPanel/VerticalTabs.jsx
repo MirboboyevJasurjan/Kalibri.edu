@@ -110,7 +110,7 @@ export default function VerticalTabs() {
                   by <Link to="/teachersdetalis">Lou Guerrero</Link>
                 </div>
                 <h2 className="course-one__title">
-                  <Link to="/coursedetalis">New react bootcamp</Link>
+                  <Link to="/coursedetails">New react bootcamp</Link>
                 </h2>
                 
                 <div className="course-one__meta">
