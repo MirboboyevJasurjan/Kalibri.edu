@@ -87,5 +87,6 @@
     
       .cta-three__single-wrap {
         margin-top: -20px;
+        width: 100%;
       }
 }

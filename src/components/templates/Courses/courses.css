@@ -271,6 +271,7 @@ a{
   }
   .like_icons{
     position: relative;
+    font-size: 30px !important;
   }
   .like_icons1{
     position: absolute;

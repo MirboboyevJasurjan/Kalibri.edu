@@ -40,6 +40,8 @@ import {axios} from 'react-axios'
 function CoursesPage(props) {
     const [course, setCourse] = useState([])
     const [cartItems, setCartItems] = React.useState([ ]);
+    const [favorites, setFavorites] = React.useState([]);
+
 
     const [cartCourse, setCartCourse] = useState([
             {mainImg: course1,
@@ -58,10 +60,28 @@ function CoursesPage(props) {
             setCourse(json);
         })
     },[])
-    const onClickPlus = (obj)=>{
-        axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
-        setCartItems(prev=>[...prev, obj]);
-      }
+
+    // const onFavorite = (obj)=>{
+    //     axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
+    //     setCartItems(prev=>[...prev, obj]);
+    //   }
+      const onFavorite = async (obj) => {
+        try {
+          if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+            axios.delete(`https://6309e6f632499100327d641a.mockapi.io/favorites/${obj.id}`);
+            setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
+          } else {
+            const { data } = await axios.post(
+              'https://6309e6f632499100327d641a.mockapi.io/favorites',
+              obj,
+            );
+            setFavorites((prev) => [...prev, data]);
+          }
+        } catch (error) {
+          alert('Не удалось добавить в фавориты');
+          console.error(error);
+        }
+      };
     return (
         <>
             <Topbar />
@@ -70,11 +90,12 @@ function CoursesPage(props) {
             {/* <Courses /> */}
             <section className="course-one course-page">
                 <div className="container">
-                    <div className="row">
+                    <div className="row" course={cartItems}>
                     
         
                         {course.map((item, index) => (
                             <Course key={index}
+                            course={cartItems}
                             courseImg={item.mainImg}
                             courseMiniImg={item.miniImg}
                             CourseHours={item.hour}
@@ -82,8 +103,8 @@ function CoursesPage(props) {
                             CoursePrice={item.price}
                             CourseTeacher={item.teacher} 
                             CourseName={item.courseName}
-                            onClickPlus={onClickPlus}
-                            onFavorite={()=>console.log("ZAKLADKI")}
+                            onClickPlus={console.log(item)}
+                            onFavorite={(obj) => onFavorite(obj)}
                             id={item.id}                          
                             />
 

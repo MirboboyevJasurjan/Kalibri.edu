@@ -23,4 +23,33 @@
 .topUserBlock{
     background-color: #022c46;
 }
+.TabsText{
+    font-size: 1.2em !important;
+    background-color: rgb(2, 44, 70);
+    font-weight: 800;
+}
 
+@media screen and (max-width: 576px) {
+    .MuiBox{
+        display: flex;
+        flex-direction: column;
+    }
+    .BoxTabs{
+        padding-top: 0px !important;
+        width: 100% !important;
+    }
+    /* .MuiTabs-flexContainer  {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+    } */
+    .TabsText{
+        font-size: 1.5em !important;
+        background-color: rgb(2, 44, 70);
+        font-weight: 800;
+    }
+    .UserName{
+        margin-left: 20px;
+    }
+    
+}

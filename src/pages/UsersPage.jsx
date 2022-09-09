@@ -5,6 +5,7 @@ import user from '../components/images/Nurlan.jpg'
 import VerticalTabs from '../components/templates/UserPanel/VerticalTabs'
 import './UsersPage.css';
 import { Link } from 'react-router-dom'
+import Footer from '../components/templates/Footer/Footer'
 
 function UsersPage() {
   return (
@@ -25,7 +26,7 @@ function UsersPage() {
           
         </div>
         <hr/>
-          <VerticalTabs/>
+          <VerticalTabs className="verticalTabs"/>
       
     </div>
   )
