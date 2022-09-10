@@ -14,6 +14,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 import Course from "../Course/Course";
+import axios from "axios";
 
 const menuHandler = () => {
   const element = document.querySelector(".like_icons1");
@@ -72,10 +73,12 @@ export default function VerticalTabs({
   CourseTeacher,
   CourseName,
   onClickPlus,
-  onFavorite,
+  // onFavorite,
   cartItems,
 }) {
   const [value, setValue] = React.useState(0);
+  const [favorites, setFavorites] = React.useState([]);
+
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -100,6 +103,24 @@ export default function VerticalTabs({
         setMyCourse(json);
       });
   }, []);
+  const onFavorite = async (obj) => {
+    try {
+      if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+        axios.delete(`https://6309e6f632499100327d641a.mockapi.io/favorites/${obj.id}`);
+        setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
+      } else {
+        const { data } = await axios.post(
+          'https://6309e6f632499100327d641a.mockapi.io/favorites',
+          obj,
+        );
+        setFavorites((prev) => [...prev, data]);
+      }
+    } 
+    catch (error) {
+      alert('Не удалось добавить в фавориты');
+      console.error(error);
+    }
+  };
 
   return (
     <Box
@@ -147,13 +168,13 @@ export default function VerticalTabs({
                   {myCourse.map((item, index) => (
                     <Course
                       key={index}
-                      courseImg={item.mainImg}
-                      courseMiniImg={item.miniImg}
-                      CourseHours={item.hour}
-                      CourseLectures={item.lectures}
-                      CoursePrice={item.price}
-                      CourseTeacher={item.teacher}
-                      CourseName={item.courseName}
+                      mainImg={item.mainImg}
+                      miniImg={item.miniImg}
+                      hour={item.hour}
+                      lectures={item.lectures}
+                      price={item.price}
+                      teacher={item.teacher}
+                      courseName={item.courseName}
                       onClickPlus={console.log(item)}
                       onFavorite={(obj) => onFavorite(obj)}
                       id={item.id}
@@ -186,13 +207,13 @@ export default function VerticalTabs({
                   {buyingCourse.map((item, index) => (
                     <Course
                       key={index}
-                      courseImg={item.mainImg}
-                      courseMiniImg={item.miniImg}
-                      CourseHours={item.hour}
-                      CourseLectures={item.lectures}
-                      CoursePrice={item.price}
-                      CourseTeacher={item.teacher}
-                      CourseName={item.courseName}
+                      mainImg={item.mainImg}
+                      miniImg={item.miniImg}
+                      hour={item.hour}
+                      lectures={item.lectures}
+                      price={item.price}
+                      teacher={item.teacher}
+                      courseName={item.courseName}
                       onClickPlus={console.log(item)}
                       onFavorite={(obj) => onFavorite(obj)}
                       id={item.id}

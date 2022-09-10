@@ -10,7 +10,7 @@ import course1 from "../components/images/course-1-1.jpg";
 import course2 from "../components/images/course-1-2.jpg";
 import course3 from "../components/images/course-1-3.jpg";
 import '../components/templates/Courses/courses.css'
-import {axios} from 'react-axios'
+import axios from "axios";
 
 
 // const course = [ 
@@ -77,7 +77,8 @@ function CoursesPage(props) {
             );
             setFavorites((prev) => [...prev, data]);
           }
-        } catch (error) {
+        } 
+        catch (error) {
           alert('Не удалось добавить в фавориты');
           console.error(error);
         }
@@ -96,13 +97,13 @@ function CoursesPage(props) {
                         {course.map((item, index) => (
                             <Course key={index}
                             course={cartItems}
-                            courseImg={item.mainImg}
-                            courseMiniImg={item.miniImg}
-                            CourseHours={item.hour}
-                            CourseLectures={item.lectures}
-                            CoursePrice={item.price}
-                            CourseTeacher={item.teacher} 
-                            CourseName={item.courseName}
+                            mainImg={item.mainImg}
+                            miniImg={item.miniImg}
+                            hour={item.hour}
+                            lectures={item.lectures}
+                            price={item.price}
+                            teacher={item.teacher} 
+                            courseName={item.courseName}
                             onClickPlus={console.log(item)}
                             onFavorite={(obj) => onFavorite(obj)}
                             id={item.id}                          

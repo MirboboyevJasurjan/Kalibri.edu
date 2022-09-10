@@ -6,8 +6,9 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
 
 
-function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePrice, CourseTeacher, CourseName, onClickPlus, id}) {
+function Course({mainImg, miniImg, hour, lectures, price, teacher, courseName, onClickPlus,onFavorite, id}) {
   const [isFavorite, setIsFavorite] = React.useState(false);
+  const obj = [mainImg, miniImg, hour, lectures, price, teacher, courseName,id]
   
   function ToTop(){
     window.scrollTo(0,0)
@@ -15,13 +16,14 @@ function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePr
 
 
     // const onClickButton = () => {
-    //   onPlus({ courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePrice, CourseTeacher, CourseName });
+    //   onPlus({ mainImg, miniImg, hour, lectures, price, teacher, courseName });
     //   setIsAdded(!isAdded);
     // };
     const onClickButton =()=> {
       // console.log(props)
     }
-    const onFavorite =()=> {
+    const onClickFavorite =()=> {
+      onFavorite(obj);
       console.log("закладки")
       setIsFavorite(!isFavorite)
     }
@@ -43,8 +45,8 @@ function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePr
         <div className="col-lg-4">
             <div className="course-one__single">
               <div className="course-one__image">
-                <img src={courseImg} alt="" />
-                <i className="like_icons" onClick={onFavorite}>{isFavorite?<AiFillHeart/>:<AiOutlineHeart/>}
+                <img src={mainImg} alt="" />
+                <i className="like_icons" onClick={onClickFavorite}>{isFavorite?<AiFillHeart/>:<AiOutlineHeart/>}
                   {/* <AiOutlineHeart
                     onClick={menuHandler}
                     className="like_icons1"
@@ -57,24 +59,24 @@ function Course({courseImg, courseMiniImg, CourseHours, CourseLectures, CoursePr
                   development
                 </a>
                 <div className="course-one__admin">
-                  <img src={courseMiniImg} alt="" />
-                  by <Link to="/teachersdetalis">{CourseTeacher}</Link>
+                  <img src={miniImg} alt="" />
+                  by <Link to="/teachersdetalis">{teacher}</Link>
                 </div>
                 <h2 className="course-one__title">
-                  <Link to="/coursedetalis">{CourseName}</Link>
+                  <Link to="/coursedetalis">{courseName}</Link>
                 </h2>
 
                 <div className="course-one__meta">
                   <a href="/course-details">
-                    <i className="far fa-clock"></i> {CourseHours}
+                    <i className="far fa-clock"></i> {hour}
                   </a>
                   <a href="/course-details">
-                    <i className="far fa-folder-open"></i> {CourseLectures}
+                    <i className="far fa-folder-open"></i> {lectures}
                   </a>
-                  <a href="/course-details">{CoursePrice}</a>
+                  <a href="/course-details">{price}</a>
                 </div>
-                <Link to={`/coursedetalis/${id}`} onClick={ToTop} className="course-one__link">
-                  See Preview
+                <Link to={`/coursedetalis/${id}`} onClick={ToTop} className="course-one__link">{""}
+                  See Preview{""}
                 </Link>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from 'react-axios'
+import axios from "axios";
 import team1 from "../../images/team-1-1.jpg";
 import team2 from "../../images/team-1-2.jpg";
 import courseD1 from "../../images/courses-details.jpg";
@@ -17,19 +17,34 @@ import Course from "../Course/Course";
 
 const CourseDetails = (props) => {
   const [courseInfo, setCourseInfo] = useState([])
-  const id = window.location.pathname.split("/").slice(-1);
+  const course_id = window.location.pathname.split("/").slice(-1);
 
     
   useEffect(() => {
     const getCourseInfo = async () => {
       const response = await axios.get(
-        `https://6309e6f632499100327d641a.mockapi.io/course/${id}`
+        `https://6309e6f632499100327d641a.mockapi.io/course/${course_id}`
         );
             
         setCourseInfo(response.data);
      };
     getCourseInfo();
   }, []);
+  
+  // const [articles, setArticles] = useState([]);
+  // const new_id = window.location.pathname.split("/").slice(-1);  
+  // useEffect(() => {
+  //   const getArticles = async () => {
+  //     const response = await axios.get(
+  //       `https://62373d82f5f6e28a154abef5.mockapi.io/news/${new_id}`
+  //       );
+            
+  //       setArticles(response.data);
+  //    };
+  //   getArticles();
+  // }, []);
+  
+  
   return (
     <section className="course-details">
       <div className="container">
@@ -37,14 +52,14 @@ const CourseDetails = (props) => {
           <div className="col-lg-8">
             <div className="course-details__content">
               <p className="course-details__author">
-                <img src={team1} alt="" />
-                by <a href="#none">Addie Walters{courseInfo.teacher}</a>
+                <img src={courseInfo.miniImg} alt="" />
+                by <a href="#none">{courseInfo.teacher}</a>
               </p>
 
               <div className="course-details__top">
                 <div className="course-details__top-left">
                   <h2 className="course-details__title">
-                  Tahrirlash mahoratini oshiring
+                    {courseInfo.courseName}
                   </h2>
                 </div>
                 <div className="course-details__top-right">
@@ -54,7 +69,7 @@ const CourseDetails = (props) => {
                 </div>
               </div>
               <div className="course-one__image">
-                <img src={courseD1} alt="" />
+                <img src={courseInfo.detailImg} alt="" />
                 <i className="far fa-heart"></i>
               </div>
               <ul className="course-details__tab-navs list-unstyled nav nav-tabs">
@@ -391,7 +406,7 @@ const CourseDetails = (props) => {
           <div className="col-lg-4">
             <div className="course-details__price">
               <p className="course-details__price-text">Kurs narxi</p>
-              <p className="course-details__price-amount">$18.00</p>
+              <p className="course-details__price-amount">{courseInfo.price}</p>
               <a href="#none" className="thm-btn course-details__price-btn">
               Ushbu kursni sotib oling
               </a>
@@ -402,13 +417,13 @@ const CourseDetails = (props) => {
                 <span className="course-details__meta-icon">
                   <AiOutlineClockCircle />
                 </span>
-                Davomiyligi: <span>10 soat</span>
+                Davomiyligi: <span>{courseInfo.hour}</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
                   <AiFillFolderOpen />
                 </span>
-                Ma'ruzalar: <span>6</span>
+                Ma'ruzalar: <span>{courseInfo.lectures}</span>
               </a>
               <a href="#none" className="course-details__meta-link">
                 <span className="course-details__meta-icon">
@@ -439,7 +454,7 @@ const CourseDetails = (props) => {
               <h2 className="course-details__list-title">Yangi Kurslar</h2>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={lcImage1} alt="" />
+                  <img src={courseInfo.mainImg} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
@@ -452,7 +467,7 @@ const CourseDetails = (props) => {
               </div>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={lcImage2} alt="" />
+                  <img src={courseInfo.mainImg} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
@@ -465,7 +480,7 @@ const CourseDetails = (props) => {
               </div>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={lcImage3} alt="" />
+                  <img src={courseInfo.mainImg} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
