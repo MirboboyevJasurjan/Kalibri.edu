@@ -454,7 +454,7 @@ const CourseDetails = (props) => {
               <h2 className="course-details__list-title">Yangi Kurslar</h2>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={courseInfo.mainImg} alt="" />
+                  <img src={"/static/media/abdurahmon.8d4fce17f37c8d4aa9a2.jpg"} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
@@ -467,7 +467,7 @@ const CourseDetails = (props) => {
               </div>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={courseInfo.mainImg} alt="" />
+                  <img src={"https://avatars.githubusercontent.com/u/83168381?v=4"} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
@@ -480,7 +480,7 @@ const CourseDetails = (props) => {
               </div>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={courseInfo.mainImg} alt="" />
+                  <img src={"https://avatars.githubusercontent.com/u/74716894?v=4"} alt="" />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">

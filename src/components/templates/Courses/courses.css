@@ -121,7 +121,6 @@ a{
   }
   .course-one__image > img {
     width: 100%;
-    height: 450px;
     object-fit: cover;
   }
   .course-one__title {
@@ -295,7 +294,6 @@ a{
   @media screen and (max-width: 576px) {
     .course-one__image > img {
       width: 100%;
-      height: 250px;
       object-fit: cover;
     }
     
