@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from 'react-router-dom';
 import {BsFilePlus} from 'react-icons/bs';
 import {AiOutlineCalendar, AiOutlineUser} from 'react-icons/ai';
@@ -10,23 +10,35 @@ import newsimg3 from '../../images/newimgs/newimg3.jpg'
 import newsimg4 from '../../images/newimgs/newimg4.jpg'
 import newsimg5 from '../../images/newimgs/newimg5.jpg'
 import newsimg6 from '../../images/newimgs/newimg6.jpg'
+import teamImg from '../../images/newimgs/qurtlar.JPG'
 
 
-const createNews = (img, details, blogOneText, id) => {
-  return { img, details, blogOneText, id};
-};
 
-const NewsCards = [
-  createNews(newsimg1, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 1 ),
-  createNews(newsimg2, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 2 ),
-  createNews(newsimg3, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 3 ),
-  createNews(newsimg4, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 4 ),
-  createNews(newsimg5, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 5),
-  createNews(newsimg6, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 6 ),
+// const createNews = (img, details, blogOneText, id) => {
+//   return { img, details, blogOneText, id};
+// };
 
-];
+// const NewsCards = [
+//   createNews(newsimg1, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 1 ),
+//   createNews(newsimg2, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 2 ),
+//   createNews(newsimg3, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 3 ),
+//   createNews(newsimg4, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 4 ),
+//   createNews(newsimg5, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 5),
+//   createNews(newsimg6, "Summer high school journalism camp", "  Aelltes port lacus quis enim var sed efficitur turpis gillased sit amet finibus eros.", 6 ),
+
+// ];
 
 const News = () => {
+  const [NewsCards, setNewsCards] = useState([])
+  const url = "https://6309e6f632499100327d641a.mockapi.io/news"
+  React.useEffect(()=>{
+    fetch(url).then((res)=>{
+        return res.json();
+        })
+        .then((json)=>{
+          setNewsCards(json);
+        })
+    },[])
   return (
     <section className="blog-one  blog-one__home-two">
       <div className="container">
@@ -77,12 +89,12 @@ const News = () => {
                  </a>
                </div>
                <h2 className="blog-one__title">
-                 <Link href="news-details.html">
-                   {news.details}
+                 <Link to={`/newsdetalis/${news.id}`}>
+                   {news.title}
                  </Link>
                </h2>
                <p className="blog-one__text">
-                {news.blogOneText}
+                {news.text}
                
                </p>
                <Link to={`/newsdetalis/${news.id}`}   className="blog-one__link">

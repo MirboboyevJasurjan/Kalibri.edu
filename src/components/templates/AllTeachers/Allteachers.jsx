@@ -6,6 +6,8 @@ import {
   FaPinterest,
   FaTwitter,
   FaFacebook,
+  FaTelegram,
+  FaYoutube,
 } from "react-icons/fa";
 import abdurahmon from "../../images/abdurahmon.jpg";
 import jamshid from "../../images/jamshid.jpg";
@@ -96,7 +98,7 @@ const Teachers = () => {
               <div className="team-one__social">
                 <a href="#none">
                   <i className="fab fa-twitter">
-                    <FaTwitter />
+                    <FaTelegram />
                   </i>
                 </a>
                 <a href="#none">
@@ -106,7 +108,7 @@ const Teachers = () => {
                 </a>
                 <a href="#none">
                   <i className="fab fa-pinterest-p">
-                    <FaPinterest />
+                    <FaYoutube />
                   </i>
                 </a>
                 <a href="#none">

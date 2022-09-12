@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Slider from "react-slick";
 import slidestrech from "../../images/slider-img.png";
+import backdev from "../../images/Komiljonov.png"
 // import slidestrech1 from "../../images/uo.jpg";
 import person2 from "../../images/scratch-1-1.png";
 import { FaGraduationCap } from "react-icons/fa";
@@ -18,7 +19,7 @@ const SliderOne = () => {
   useEffect(() => {
     TweenMax.to(mainText, 2.2, { opacity: 1, y: -55, delay: 0.5, ease: Power3.easeOut});
     TweenMax.to(mainText2, 2.2, { opacity: 1, y: -55, delay: 0.5, ease: Power3.easeOut});
-    TweenMax.to(teacherImg, 2.2, { opacity: 1, x: -55, delay: 0.5, ease: Expo.easeOut });
+    TweenMax.to(teacherImg, 2.2, { opacity: 1, y: -50 , x: -100, delay: 0.5, ease: Expo.easeOut });
  
 
 
@@ -35,9 +36,9 @@ const SliderOne = () => {
                 <div className="aaab">
                   <img src={person2} className="banner-one__person " alt="" />
                   <img ref={el=>{teacherImg=el}}
-                    src={slidestrech}
+                    src={backdev}
                     alt=""
-                    className="banner-one__scratch"
+                    className="banner-one__scratch" style={{width: "360px", height:"700px", objectFit: "cover"}}
                   />
                 </div>
 

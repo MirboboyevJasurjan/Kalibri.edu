@@ -63,7 +63,7 @@ function Course({mainImg, miniImg, hour, lectures, price, teacher, courseName, o
                   by <Link to="/teachersdetalis">{teacher}</Link>
                 </div>
                 <h2 className="course-one__title">
-                  <Link to="/coursedetalis">{courseName}</Link>
+                  <Link to={`/coursedetalis/${id}`} onClick={ToTop}>{courseName}</Link>
                 </h2>
 
                 <div className="course-one__meta">
@@ -73,7 +73,7 @@ function Course({mainImg, miniImg, hour, lectures, price, teacher, courseName, o
                   <a href="/course-details">
                     <i className="far fa-folder-open"></i> {lectures}
                   </a>
-                  <a href="/course-details">{price}</a>
+                  <Link to={`/coursedetalis/${id}`} onClick={ToTop}>{price}</Link>
                 </div>
                 <Link to={`/coursedetalis/${id}`} onClick={ToTop} className="course-one__link">{""}
                   See Preview{""}

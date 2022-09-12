@@ -77,15 +77,12 @@ export default function VerticalTabs({
   cartItems,
 }) {
   const [value, setValue] = React.useState(0);
-  const [favorites, setFavorites] = React.useState([]);
-
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  const [buyingCourse, setBuyingCourse] = useState([]);
-  const [myCourse, setMyCourse] = useState([]);
+  const [favorites, setFavorites] = React.useState([]);
+  const [allCourse, setAllCourse] = useState([]);
+  const [favoriteCourse, setFavoriteCourse] = useState([]);
 
   React.useEffect(() => {
     fetch("https://6309e6f632499100327d641a.mockapi.io/course")
@@ -93,14 +90,14 @@ export default function VerticalTabs({
         return res.json();
       })
       .then((json) => {
-        setBuyingCourse(json);
+        setAllCourse(json);
       });
     fetch("https://6309e6f632499100327d641a.mockapi.io/favorites")
       .then((res) => {
         return res.json();
       })
       .then((json) => {
-        setMyCourse(json);
+        setFavoriteCourse(json);
       });
   }, []);
   const onFavorite = async (obj) => {
@@ -160,31 +157,7 @@ export default function VerticalTabs({
         >
           MENING KURSLARIM
         </h2>
-        <div className="course-one__single">
-          <div className="course-one__image">
-            <section className="course-one course-page">
-              <div className="container">
-                <div className="row" items={cartItems}>
-                  {myCourse.map((item, index) => (
-                    <Course
-                      key={index}
-                      mainImg={item.mainImg}
-                      miniImg={item.miniImg}
-                      hour={item.hour}
-                      lectures={item.lectures}
-                      price={item.price}
-                      teacher={item.teacher}
-                      courseName={item.courseName}
-                      onClickPlus={console.log(item)}
-                      onFavorite={(obj) => onFavorite(obj)}
-                      id={item.id}
-                    />
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
+        
         
       </TabPanel>
       <TabPanel value={value} index={1}>
@@ -204,8 +177,33 @@ export default function VerticalTabs({
             <section className="course-one course-page">
               <div className="container">
                 <div className="row" items={cartItems}>
-                  {buyingCourse.map((item, index) => (
+                  {allCourse.map((item, index) => (
                     <Course
+                      key={index}
+                   
+                      onClickPlus={console.log(item)}
+                      onFavorite={(obj) => onFavorite(obj)}
+                      id={item.id}
+                      {...item}
+                    />
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        <h2 style={{ fontSize: "50px", color: "green" }}>
+          Yoqqan kurslar
+        </h2>
+        <div className="course-one__single">
+          <div className="course-one__image">
+            <section className="course-one course-page">
+              <div className="container">
+                <div className="row" items={cartItems}>
+                  {favoriteCourse.map((item, index) => (
+                 <Course
                       key={index}
                       mainImg={item.mainImg}
                       miniImg={item.miniImg}
@@ -224,9 +222,6 @@ export default function VerticalTabs({
             </section>
           </div>
         </div>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <h2 style={{ fontSize: "50px", color: "green" }}>SIZ</h2>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <h2 style={{ fontSize: "50px", color: "red" }}>QURTSIZ !</h2>

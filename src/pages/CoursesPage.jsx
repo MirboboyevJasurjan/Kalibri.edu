@@ -13,29 +13,7 @@ import '../components/templates/Courses/courses.css'
 import axios from "axios";
 
 
-// const course = [ 
-//     {mainImg: course1,
-//     miniImg: course1,
-//     hour:"15 hours",
-//     lectures:"15",
-//     price: 15000,
-//     teacher:"Jasur",
-//     courseName:"Frontend"},
-//     {mainImg: course2,
-//     miniImg: course2,
-//     hour:"16 hours",
-//     lectures:"16",
-//     price: 16000,
-//     teacher:"Jas",
-//     courseName:"Backend"},
-//     {mainImg: course3,
-//     miniImg: course3,
-//     hour:"17 hours",
-//     lectures:"17",
-//     price: 17000,
-//     teacher:"Qurt",
-//     courseName:"FullStack"}
-// ]
+
 
 function CoursesPage(props) {
     const [course, setCourse] = useState([])
@@ -43,15 +21,7 @@ function CoursesPage(props) {
     const [favorites, setFavorites] = React.useState([]);
 
 
-    const [cartCourse, setCartCourse] = useState([
-            {mainImg: course1,
-    miniImg: course1,
-    hour:"15 hours",
-    lectures:"15",
-    price: 15000,
-    teacher:"Jasur",
-    courseName:"Frontend"}
-    ])
+ 
     React.useEffect(()=>{
     fetch('https://6309e6f632499100327d641a.mockapi.io/course').then((res)=>{
         return res.json();

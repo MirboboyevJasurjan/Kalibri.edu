@@ -1,11 +1,27 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import { AiFillCalendar, AiOutlineUser } from "react-icons/ai";
-import { FaComments } from "react-icons/fa";
+import { FaComments, FaTelegram, FaYoutube } from "react-icons/fa";
 import { FaInstagram, FaPinterest, FaTwitter, FaFacebook } from "react-icons/fa";
+import axios from "axios";
 import './newsdetails.css';
 import newsimg4 from '../../images/newimgs/newimg2.jpg'
 
-const NewsDetails = () => {
+const NewsDetails = ({img, details, blogOneText, id}) => {
+  const [newsInfo, setNewsInfo] = useState([])
+  const news_id = window.location.pathname.split("/").slice(-1);
+
+    
+  useEffect(() => {
+    const getNewsInfo = async () => {
+      const res = await axios.get(
+        `https://6309e6f632499100327d641a.mockapi.io/news/${news_id}`
+        );
+            
+        setNewsInfo(res.data);
+        console.log(res)
+     };
+     getNewsInfo();
+  }, []);
   return (
     <section className="blog-details">
       <div className="container">
@@ -13,7 +29,7 @@ const NewsDetails = () => {
           <div className="col-lg-12">
             <div className="blog-one__single">
               <div className="blog-one__image">
-                <img src={newsimg4} alt="" />
+                <img src={newsInfo.img} alt="" />
               </div>
               <div className="blog-one__content text-center">
                 <div className="blog-one__meta">
@@ -52,49 +68,30 @@ const NewsDetails = () => {
                   </a>
                 </div>
                 <h2 className="blog-one__title">
-                  Are you ready to become a best student
+                  {newsInfo.title}
                 </h2>
                 <p className="blog-one__text">
-                  Aelltes port lacus quis enim var sed efficitur turpis gilla
-                  sed sit Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry’s
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged.
+                  {newsInfo.text1}
                 </p>
                 <p className="blog-one__text">
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of lorem ipsum amet finibus eros. Lorem Ipsum is
-                  simply dummy text of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry’s standard dummy text ever
-                  since the 1500s, when an unknown printer took a galley of type
-                  and scrambled it to make a type specimen book. It has survived
-                  not only five centuries, but also the leap into electronic
-                  typesetting.
+                  {newsInfo.text2}
                 </p>
                 <p className="blog-one__text">
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of lorem ipsum.
+                  {newsInfo.text3}
                 </p>
               </div>
             </div>
             <div className="share-block">
               <div className="left-block">
                 <p>
-                  Tags: <a href="#none">Business,</a>{" "}
-                  <a href="#none">Agency,</a> <a href="#none">Technology</a>
+                  Tags: <a href="#none">{newsInfo.tags},</a>{" "}
+                  <a href="#none">{newsInfo.tags},</a> <a href="#none">{newsInfo.tags}</a>
                 </p>
               </div>
               <div className="social-block">
                 <a href="#none">
                   <i className="fab fa-twitter">
-                    <FaTwitter />
+                    <FaTelegram />
                   </i>
                 </a>
                 <a href="#none">
@@ -104,7 +101,7 @@ const NewsDetails = () => {
                 </a>
                 <a href="#none">
                   <i className="fab fa-instagram">
-                    <FaPinterest />
+                    <FaYoutube />
                   </i>
                 </a>
                 <a href="#none">
