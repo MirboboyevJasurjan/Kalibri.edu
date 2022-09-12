@@ -73,6 +73,14 @@ const Teachers = () => {
       "Photoshop, Figma",
       ["", "", ""]
     ),
+    createTeacher(
+      "teacher6",
+      "https://avatars.githubusercontent.com/u/49445519?v=4",
+      "Sulaymon",
+      "Mobile DEV",
+      "Flutter",
+      ["", "", ""]
+    ),
   ];
 
   return (
@@ -90,7 +98,7 @@ const Teachers = () => {
                 <h2 className="team-one__name">
                   <Link to={`/teachersdetalis/${e.id}`} onClick={ToTop}>{e.name}</Link>
                 </h2>
-                <p className="team-one__designation">{e.name}</p>
+                <p className="team-one__designation">{e.job}</p>
                 <p className="team-one__text">
                   {e.about}
                 </p>
@@ -121,272 +129,7 @@ const Teachers = () => {
 
           </div>
           )})}
-          {/* <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team2} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Christina Newman</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team3} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Gilbert Daniels</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team4} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Austin Caldwell</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team5} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Phoebe Park</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team6} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Matilda Hawkins</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team7} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Lizzie Butler</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-            <div className="team-one__single">
-              <div className="team-one__image">
-                <img src={team8} alt="" />
-              </div>
-              <div className="team-one__content">
-                <h2 className="team-one__name">
-                  <Link to="/teacher-details">Trevor Turner</Link>
-                </h2>
-                <p className="team-one__designation">Teacher</p>
-                <p className="team-one__text">
-                  There are many varia of passages of lorem.
-                </p>
-              </div>
-             <div className="team-one__social">
-                <a href="#none">
-                  <i className="fab fa-twitter">
-                  <FaTwitter />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-facebook-square">
-                  <FaFacebook />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-pinterest-p">
-                  <FaPinterest />
-                  </i>
-                </a>
-                <a href="#none">
-                  <i className="fab fa-instagram">
-                  <FaInstagram />
-                  </i>
-                </a>
-              </div>
-            </div>
-          </div> */}
+  
         </div>
       </div>
     </section>
