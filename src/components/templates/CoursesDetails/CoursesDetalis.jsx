@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import team1 from "../../images/team-1-1.jpg";
 import team2 from "../../images/team-1-2.jpg";
@@ -6,45 +6,45 @@ import courseD1 from "../../images/courses-details.jpg";
 import lcImage1 from "../../images/team-1-4.jpg";
 import lcImage2 from "../../images/team-1-2.jpg";
 import lcImage3 from "../../images/team-1-3.jpg";
-import './coursesdetails.css'
-import { AiOutlineClockCircle } from 'react-icons/ai';
-import { AiFillFolderOpen } from 'react-icons/ai';
-import { BsPersonCircle } from 'react-icons/bs';
-import { BsPlayCircle } from 'react-icons/bs';
-import { BsFlag } from 'react-icons/bs';
-import { BsBell } from 'react-icons/bs';
+import "./coursesdetails.css";
+import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiFillFolderOpen } from "react-icons/ai";
+import { BsPersonCircle } from "react-icons/bs";
+import { BsPlayCircle } from "react-icons/bs";
+import { BsFlag } from "react-icons/bs";
+import { BsBell } from "react-icons/bs";
 import Course from "../Course/Course";
 
 const CourseDetails = (props) => {
-  const [courseInfo, setCourseInfo] = useState([])
+  const [courseInfo, setCourseInfo] = useState([]);
   const course_id = window.location.pathname.split("/").slice(-1);
+  const [player, setPlayer] = useState(false);
+  const [player2, setPlayer2] = useState(false);
 
-    
   useEffect(() => {
     const getCourseInfo = async () => {
       const response = await axios.get(
         `https://6309e6f632499100327d641a.mockapi.io/course/${course_id}`
-        );
-            
-        setCourseInfo(response.data);
-     };
+      );
+
+      setCourseInfo(response.data);
+    };
     getCourseInfo();
   }, []);
-  
+
   // const [articles, setArticles] = useState([]);
-  // const new_id = window.location.pathname.split("/").slice(-1);  
+  // const new_id = window.location.pathname.split("/").slice(-1);
   // useEffect(() => {
   //   const getArticles = async () => {
   //     const response = await axios.get(
   //       `https://62373d82f5f6e28a154abef5.mockapi.io/news/${new_id}`
   //       );
-            
+
   //       setArticles(response.data);
   //    };
   //   getArticles();
   // }, []);
-  
-  
+
   return (
     <section className="course-details">
       <div className="container">
@@ -90,13 +90,12 @@ const CourseDetails = (props) => {
                     data-toggle="tab"
                     href="#curriculum"
                   >
-                   O'quv dasturi
-
+                    O'quv dasturi
                   </a>
                 </li>
                 <li>
                   <a className="" role="tab" data-toggle="tab" href="#review">
-                  Sharhlar
+                    Sharhlar
                   </a>
                 </li>
               </ul>
@@ -107,8 +106,25 @@ const CourseDetails = (props) => {
                   id="overview"
                 >
                   <p className="course-details__tab-text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo molestias neque harum consectetur! Ipsam soluta quod sed dicta ut temporibus culpa ducimus? Atque corporis excepturi commodi minus quidem! Tenetur, numquam quia voluptatem impedit animi consectetur laudantium rem harum, quod rerum, inventore facilis nobis! Natus provident alias repellat, explicabo porro nesciunt?
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad magnam ratione cum nihil atque maxime voluptate minima nostrum eos maiores hic, alias laborum, similique numquam voluptas iure fugiat tempore, incidunt nam vel voluptatem. Praesentium repellendus quibusdam distinctio sit alias fuga voluptas dignissimos ea tempora dicta et, debitis autem recusandae adipisci minus sint odio corrupti ipsa placeat? Id illo eius accusantium iusto, blanditiis odio aperiam earum soluta. Et odit aperiam enim. Libero nihil aperiam ab sit adipisci itaque porro earum? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt vel fuga eius placeat odit ex vero ipsum suscipit, id
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Nemo molestias neque harum consectetur! Ipsam soluta quod
+                    sed dicta ut temporibus culpa ducimus? Atque corporis
+                    excepturi commodi minus quidem! Tenetur, numquam quia
+                    voluptatem impedit animi consectetur laudantium rem harum,
+                    quod rerum, inventore facilis nobis! Natus provident alias
+                    repellat, explicabo porro nesciunt? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Distinctio ad magnam
+                    ratione cum nihil atque maxime voluptate minima nostrum eos
+                    maiores hic, alias laborum, similique numquam voluptas iure
+                    fugiat tempore, incidunt nam vel voluptatem. Praesentium
+                    repellendus quibusdam distinctio sit alias fuga voluptas
+                    dignissimos ea tempora dicta et, debitis autem recusandae
+                    adipisci minus sint odio corrupti ipsa placeat? Id illo eius
+                    accusantium iusto, blanditiis odio aperiam earum soluta. Et
+                    odit aperiam enim. Libero nihil aperiam ab sit adipisci
+                    itaque porro earum? Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Sunt vel fuga eius placeat odit ex vero
+                    ipsum suscipit, id
                   </p>
                   <br />
                   <ul className="list-unstyled course-details__overview-list">
@@ -124,7 +140,7 @@ const CourseDetails = (props) => {
                   id="curriculum"
                 >
                   <h3 className="course-details__tab-title">
-                  Boshlang'ich daraja kursi
+                    Boshlang'ich daraja kursi
                   </h3>
                   <br />
                   <p className="course-details__tab-text">
@@ -135,13 +151,37 @@ const CourseDetails = (props) => {
                   </p>
                   <br />
                   <ul className="course-details__curriculum-list list-unstyled">
+
+                  
                     <li>
                       <div className="course-details__curriculum-list-left">
                         <div className="course-details__meta-icon video-icon">
                           <i className="fas fa-play"></i>
                         </div>
                         <a href="#none">Tahririyatga kirish</a>{" "}
-                        <span>Ko‘rib chiqish</span>
+                        <span onClick={() => setPlayer(!player)}>
+                          Ko‘rib chiqish
+                        </span>
+                        {player ? (
+                          <div className="fixedPlayer">
+                            {" "}
+                            <div className="player">
+                            <button
+                              className="btnESC"
+                              onClick={() => setPlayer(!player)}
+                            >
+                              X
+                            </button>
+
+                              <video
+                                src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm"
+                                allowFullScreen
+                                className="VideoPlayer" 
+                                controls
+                              ></video>
+                            </div>
+                          </div>
+                        ) : null}
                       </div>
                       <div className="course-details__curriculum-list-right">
                         16 daqiqa
@@ -153,7 +193,27 @@ const CourseDetails = (props) => {
                           <i className="fas fa-play"></i>
                         </div>
                         <a href="#none">Tahrirlashning umumiy ko'rinishi</a>{" "}
-                        <span>Ko‘rib chiqish</span>
+                        <span onClick={() => setPlayer2(!player2)}>Ko‘rib chiqish</span>
+                        {player2 ? (
+                          <div className="fixedPlayer">
+                            {" "}
+                            <div className="player">
+                            <button
+                              className="btnESC"
+                              onClick={() => setPlayer2(!player2)}
+                            >
+                              X
+                            </button>
+
+                              <video
+                                src="http://165.232.76.226/media/gid/video/2022/08/23/VID_127280513_040752_3030.mp4"
+                                allowFullScreen
+                                className="VideoPlayer"
+                                controls
+                              ></video>
+                            </div>
+                          </div>
+                        ) : null}
                       </div>
                       <div className="course-details__curriculum-list-right">
                         10 daqiqa
@@ -175,15 +235,13 @@ const CourseDetails = (props) => {
                         <a href="#none">Viktorina</a>
                       </div>
                       <div className="course-details__curriculum-list-right">
-                      6 ta savol
+                        6 ta savol
                       </div>
                     </li>
                   </ul>
                   <br />
                   <br />
-                  <h3 className="course-details__tab-title">
-                  Oraliq daraja
-                  </h3>
+                  <h3 className="course-details__tab-title">Oraliq daraja</h3>
                   <br />
                   <p className="course-details__tab-text">
                     Aelltes port lacus quis enim var sed efficitur turpis gilla
@@ -224,6 +282,7 @@ const CourseDetails = (props) => {
                         6 ta savol
                       </div>
                     </li>
+
                   </ul>
                 </div>
                 <div
@@ -235,9 +294,7 @@ const CourseDetails = (props) => {
                     <div className="col-xl-7 d-flex">
                       <div className="course-details__progress my-auto">
                         <div className="course-details__progress-item">
-                          <p className="course-details__progress-text">
-                            A'lo
-                          </p>
+                          <p className="course-details__progress-text">A'lo</p>
                           <div className="course-details__progress-bar">
                             <span style={{ width: `95%` }}></span>
                           </div>
@@ -245,7 +302,7 @@ const CourseDetails = (props) => {
                         </div>
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                          Juda yaxshi
+                            Juda yaxshi
                           </p>
                           <div className="course-details__progress-bar">
                             <span style={{ width: `65%` }}></span>
@@ -254,7 +311,7 @@ const CourseDetails = (props) => {
                         </div>
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                          O'rtacha
+                            O'rtacha
                           </p>
                           <div className="course-details__progress-bar">
                             <span style={{ width: `33%` }}></span>
@@ -273,7 +330,7 @@ const CourseDetails = (props) => {
                         </div>
                         <div className="course-details__progress-item">
                           <p className="course-details__progress-text">
-                          Qo'rqinchli
+                            Qo'rqinchli
                           </p>
                           <div className="course-details__progress-bar">
                             <span
@@ -296,7 +353,7 @@ const CourseDetails = (props) => {
                           <i className="fas fa-star-half"></i>
                         </div>
                         <p className="course-details__review-text">
-                        30 ta sharh
+                          30 ta sharh
                         </p>
                       </div>
                     </div>
@@ -408,7 +465,7 @@ const CourseDetails = (props) => {
               <p className="course-details__price-text">Kurs narxi</p>
               <p className="course-details__price-amount">{courseInfo.price}</p>
               <a href="#none" className="thm-btn course-details__price-btn">
-              Ushbu kursni sotib oling
+                Ushbu kursni sotib oling
               </a>
             </div>
 
@@ -454,7 +511,10 @@ const CourseDetails = (props) => {
               <h2 className="course-details__list-title">Yangi Kurslar</h2>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={"/static/media/abdurahmon.8d4fce17f37c8d4aa9a2.jpg"} alt="" />
+                  <img
+                    src={"/static/media/abdurahmon.8d4fce17f37c8d4aa9a2.jpg"}
+                    alt=""
+                  />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
@@ -467,7 +527,10 @@ const CourseDetails = (props) => {
               </div>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={"https://avatars.githubusercontent.com/u/83168381?v=4"} alt="" />
+                  <img
+                    src={"https://avatars.githubusercontent.com/u/83168381?v=4"}
+                    alt=""
+                  />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">
@@ -480,7 +543,10 @@ const CourseDetails = (props) => {
               </div>
               <div className="course-details__list-item">
                 <div className="course-details__list-img">
-                  <img src={"https://avatars.githubusercontent.com/u/74716894?v=4"} alt="" />
+                  <img
+                    src={"https://avatars.githubusercontent.com/u/74716894?v=4"}
+                    alt=""
+                  />
                 </div>
                 <div className="course-details__list-content">
                   <a className="course-details__list-author" href="#none">

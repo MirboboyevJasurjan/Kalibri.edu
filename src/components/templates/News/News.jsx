@@ -39,6 +39,9 @@ const News = () => {
           setNewsCards(json);
         })
     },[])
+    function ToTop(){
+      window.scrollTo(0,0)
+    }
   return (
     <section className="blog-one  blog-one__home-two">
       <div className="container">
@@ -49,7 +52,7 @@ const News = () => {
            <div className="blog-one__single">
              <div className="blog-one__image">
                <img src={news.img} alt="" />
-               <Link to={`/newsdetalis/${news.id}`}  className="blog-one__plus" href="news-details.html">
+               <Link to={`/newsdetalis/${news.id}`} onClick={ToTop}  className="blog-one__plus" href="news-details.html">
                  <i className="kipso-icon-plus-symbol">
                    <BsFilePlus />
                  </i>
@@ -89,7 +92,7 @@ const News = () => {
                  </a>
                </div>
                <h2 className="blog-one__title">
-                 <Link to={`/newsdetalis/${news.id}`}>
+                 <Link to={`/newsdetalis/${news.id}`} onClick={ToTop}>
                    {news.title}
                  </Link>
                </h2>
@@ -97,7 +100,7 @@ const News = () => {
                 {news.text}
                
                </p>
-               <Link to={`/newsdetalis/${news.id}`}   className="blog-one__link">
+               <Link to={`/newsdetalis/${news.id}`} onClick={ToTop}  className="blog-one__link">
                  Read More
                </Link>
              </div>

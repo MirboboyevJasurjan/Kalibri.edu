@@ -10,7 +10,7 @@ function ContactPage(props) {
     <>
       <Topbar />
       <NavOne />
-      <Banner>CONTACT</Banner>
+      <Banner>Bo'glanish</Banner>
       <Contact />
       <Footer />
     </>

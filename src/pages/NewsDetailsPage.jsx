@@ -9,7 +9,7 @@ function NewsDetailsPage(props) {
     <>
       <Topbar />
       <NavOne />
-      <Banner>NEWS DETAILS</Banner>
+      <Banner>Yangiliklar haqida</Banner>
       <NewsDetails />
       <Footer />
     </>

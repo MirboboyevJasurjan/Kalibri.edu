@@ -7,7 +7,7 @@ export default function Banner({ children }) {
             <Container>
                 <ul className='list-unstyled thm-breadcrumb'>
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/">Bosh sahifa</a>
                     </li>
                     <li className='active'>
                         <a href="#none">{children}</a>

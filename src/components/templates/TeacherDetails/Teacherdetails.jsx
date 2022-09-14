@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./Teacherdetails.css";
 import certificate1 from "../../images/certificate-1-1.png";
 import certificate2 from "../../images/certificate-1-2.png";
@@ -7,22 +7,35 @@ import { BsInstagram } from "react-icons/bs";
 import { BsTelegram } from "react-icons/bs";
 import { BsFacebook } from "react-icons/bs";
 import jamshid from "../../images/jamshid.jpg";
+import axios from "axios";
+import Teachers from "../AllTeachers/Allteachers";
 
 
 const TeachersDetalis = () => {
+  const [teacherInfo, setTeacherInfo] = useState([])
+  const teacher_id = window.location.pathname.split("/").slice(-1);
+
+    
+  useEffect(() => {
+    const getTeacherInfo = async () => {
+      const res = await axios.get(
+        `https://6309e6f632499100327d641a.mockapi.io/teachers/${teacher_id}`
+        );
+            
+        setTeacherInfo(res.data);
+        console.log(res)
+     };
+     getTeacherInfo();
+  }, []);
   return (
     <section className="team-details">
       <div className="container">
         <div className="row justify-content-between">
           <div className="col-lg-5">
             <div className="team-details__content">
-              <h2 className="team-details__title">Read my story</h2>
+              <h2 className="team-details__title">{teacherInfo.title}</h2>
               <p className="team-details__text">
-                Lorem Ipsum is simply dummy text of the printing and type
-                industry. Lorem Ipsum has been the standard dummy text ever
-                since the when an unknown was popularised. It has survived not
-                only five centuries, but also the leap into electronic
-                typesetting remaining unchanged.
+                {teacherInfo.text}
               </p>
               <h3 className="team-details__subtitle">Certificate</h3>
               <ul className="list-unstyled team-details__certificate-list">
@@ -83,13 +96,13 @@ const TeachersDetalis = () => {
           <div className="col-lg-6">
             <div className="team-one__single">
               <div className="team-one__image">
-                <img src={jamshid} alt="" />
+                <img src={teacherInfo.avatar} alt="" />
               </div>
               <div className="team-one__content">
                 <h2 className="team-one__name">
-                  <a href="/team-details">Jamshid Qayumov</a>
+                  <a href="/team-details">{teacherInfo.name}</a>
                 </h2>
-                <p className="team-one__designation">Teacher</p>
+                <p className="team-one__designation">{teacherInfo.jobName}</p>
               </div>
               <div className="team-one__social">
                 <a href="#none">

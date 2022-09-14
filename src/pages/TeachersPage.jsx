@@ -9,7 +9,7 @@ function TeachersPage(props) {
     <>
       <Topbar />
       <NavOne />
-      <Banner>TEACHERS</Banner>
+      <Banner>Ustozlar</Banner>
       <Teachers />
       <Footer />
     </>

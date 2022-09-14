@@ -19,7 +19,7 @@ const SliderOne = () => {
   useEffect(() => {
     TweenMax.to(mainText, 2.2, { opacity: 1, y: -55, delay: 0.5, ease: Power3.easeOut});
     TweenMax.to(mainText2, 2.2, { opacity: 1, y: -55, delay: 0.5, ease: Power3.easeOut});
-    TweenMax.to(teacherImg, 2.2, { opacity: 1, x: -100, delay: 0.5, ease: Expo.easeOut });
+    TweenMax.to(teacherImg, 2.2, { opacity: 1, y: -10, x: -100, delay: 0.5, ease: Expo.easeOut });
  
 
 

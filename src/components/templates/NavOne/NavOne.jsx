@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../images/logo-dark.png";
+import Kalibri from '../../images/Kalibri.png'
 import { Link } from "react-router-dom";
 import "./NavOne.css";
 import {
@@ -48,7 +49,7 @@ const NavOne = () => {
           <div className="logo-box clearfix">
             <Link to="/" className="navbar-brand">
               <img
-                src={logo}
+                src={Kalibri}
                 className="main-logo"
                 width="128"
                 alt="Awesome alter text"
@@ -84,7 +85,7 @@ const NavOne = () => {
                     <Link to="/courses">Kurslar</Link>
                   </li>
                   <li>
-                    <Link to="/coursedetalis">Courses Details</Link>
+                    <Link to="/coursedetalis">Kurslar haqida</Link>
                   </li>
                 </ul>
               </li>
@@ -143,19 +144,19 @@ const NavOne = () => {
           <div className={click ? "stricked-menu " : "d-none"}>
             <ul className="navigation-box">
               <li onClick={addSubMenu}>
-                <Link to="/">Home</Link>
+                <Link to="/">Bosh sahifa</Link>
               </li>
               <li onClick={addSubMenu2}>
-                <Link to="/gallery">Gallery</Link>
+                <Link to="/gallery">Galereya</Link>
               </li>
               <li onClick={addSubMenu3}>
                 <h6>Courses</h6>
                 <ul className={subMenu3 ? "d-none" : "sub-menu"}>
                   <li>
-                    <Link to="/courses">Courses</Link>
+                    <Link to="/courses">Kurslar</Link>
                   </li>
                   <li>
-                    <Link to="/coursedetails">Courses Details</Link>
+                    <Link to="/coursedetails">Kurslar haqida</Link>
                   </li>
                 </ul>
               </li>
@@ -163,25 +164,25 @@ const NavOne = () => {
                 <h6>Teachers</h6>
                 <ul className={subMenu5 ? "d-none" : "sub-menu"}>
                   <li>
-                    <Link to="/teachers">Teachers</Link>
-                    <Link to="/teachersdetalis">Teachers Details</Link>
+                    <Link to="/teachers">Ustozlar</Link>
+                    <Link to="/teachersdetalis">Ustozlar haqida</Link>
                   </li>
                 </ul>
               </li>
               <li onClick={addSubMenu6}>
-                <h6>News</h6>
+                <h6>Yangiliklar</h6>
                 
                 <ul className={subMenu6 ? "d-none" : "sub-menu"}>
                   <li>
-                    <Link to="/news">News Page</Link>
+                    <Link to="/news">Yangiliklar sahifasi</Link>
                   </li>
                   <li>
-                    <Link to="/newsdetalis">News Details</Link>
+                    <Link to="/newsdetalis">Yangiliklar haqida</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact">Kontaktlar</Link>
               </li>
             </ul>
             {/* <div className="right-side-box">

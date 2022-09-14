@@ -16,7 +16,7 @@ function GaleryPage(props) {
     <>
       <Topbar />
       <NavOne />
-      <Banner><span ref={el=>{Galery=el}}>Gallery</span></Banner>
+      <Banner><span ref={el=>{Galery=el}}>Galereya</span></Banner>
       <Gallery />
       <Footer />
     </>

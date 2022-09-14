@@ -9,7 +9,7 @@ const TeachersDetailsPage = () => {
     <>
       <Topbar />
       <NavOne />
-      <Banner>TEACHERS DETAILS</Banner>
+      <Banner>Ustozlar haqida</Banner>
       <TeachersDetalis />
       <Footer />
     </>

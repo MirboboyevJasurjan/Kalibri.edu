@@ -12,6 +12,9 @@ import { useParams } from 'react-router-dom';
 function CoursesDetailsPage(props) {
   // alert('salom');
   // console.log(courses);
+  // const onAddToCard = (obj) =>{
+  //   setCartItems((prev)=>[...prev, obj]);
+  // };
   
   let { id } = useParams();
   
@@ -22,7 +25,7 @@ function CoursesDetailsPage(props) {
     <>
       <Topbar />
       <NavOne />
-      <Banner>COURSES DETAILS</Banner>
+      <Banner>Kurslar haqida</Banner>
       <CourseDetails />
       <Footer />
     </>
