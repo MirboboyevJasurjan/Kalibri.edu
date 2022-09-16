@@ -217,3 +217,10 @@
           font-size: 40px !important;
       }
   }
+  @media screen and (max-width: 576px) {
+    #regModal, #registrModal{
+        width: 90% !important;
+        margin: 0 auto;
+    }
+   
+  }

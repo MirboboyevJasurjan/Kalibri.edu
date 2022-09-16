@@ -16,6 +16,8 @@ import team3 from "../../images/team-1-3.jpg";
 import team4 from "../../images/team-1-4.jpg";
 import team5 from "../../images/team-1-1.jpg";
 import team6 from "../../images/team-1-2.jpg";
+// import Api from "../../../api"
+
 
 // import courseCards from '../../../db/courses.json';
 
@@ -39,23 +41,16 @@ const Courses = () => {
     }
   };
 
-  const createCourse = (id,img, tag, author, title, hours, lectures, price) => {
-    return { id, img, tag, author, title, hours, lectures, price };
-  };
 
-  const courseCards = [
-    createCourse(1,course1, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
-    createCourse(2,course2, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
-    createCourse(3,course3, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
-    createCourse(4,course4, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
-    createCourse(5,course5, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" ),
-    createCourse(6,course6, "Development", "Nurlan Karshiev", "New React Bootcamp", "10 Hours", "6 Lectures", "100$" )
-  ];
+  const courseCards =[ ] 
+    // const courseCards = Api.courses();
+
   return (
     <section className="course-one course-page">
       <div className="container">
         <div className="row">
           {courseCards.map((card, i) => {
+            // let link = `coursedetails/${card.id}`
             let link = `coursedetails/${i}`
             return (
             <div className="col-lg-4">

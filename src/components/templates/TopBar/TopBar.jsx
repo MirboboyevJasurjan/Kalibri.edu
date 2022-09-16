@@ -102,9 +102,9 @@ function Topbar() {
         <Modal
           visible={state}
           width="400"
-          height="570"
           effect="fadeInDown"
           onClickAway={closeModal}
+         
         >
           <div className="modal-div">
             <div className="Rbtn-div">
@@ -166,9 +166,9 @@ function Topbar() {
           <Modal
             visible={state2}
             width="400"
-            height="400"
             effect="fadeInDown"
             onClickAway={closeModal2}
+            id="regModal"
           >
             <div className="row Rrow">
               <div className="col-md-12 Rbox">

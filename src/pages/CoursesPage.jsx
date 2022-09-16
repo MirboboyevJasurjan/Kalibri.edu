@@ -35,24 +35,28 @@ function CoursesPage(props) {
     //     axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
     //     setCartItems(prev=>[...prev, obj]);
     //   }
-      const onFavorite = async (obj) => {
-        try {
-          if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
-            axios.delete(`https://6309e6f632499100327d641a.mockapi.io/favorites/${obj.id}`);
-            setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
-          } else {
-            const { data } = await axios.post(
-              'https://6309e6f632499100327d641a.mockapi.io/favorites',
-              obj,
-            );
-            setFavorites((prev) => [...prev, data]);
-          }
-        } 
-        catch (error) {
-          alert('Не удалось добавить в фавориты');
-          console.error(error);
-        }
-      };
+    const onFavorite = (obj) =>{
+      axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
+      setFavorites(prev=>[...prev, obj]);
+    }
+      // const onFavorite = async (obj) => {
+      //   try {
+      //     if (favorites.find((favObj) => Number(favObj.id) === Number(obj.id))) {
+      //       axios.delete(`https://6309e6f632499100327d641a.mockapi.io/favorites/${obj.id}`);
+      //       setFavorites((prev) => prev.filter((item) => Number(item.id) !== Number(obj.id)));
+      //     } else {
+      //       const { data } = await axios.post(
+      //         'https://6309e6f632499100327d641a.mockapi.io/favorites',
+      //         obj,
+      //       );
+      //       setFavorites((prev) => [...prev, data]);
+      //     }
+      //   } 
+      //   catch (error) {
+      //     alert('Не удалось добавить в фавориты');
+      //     console.error(error);
+      //   }
+      // };
     return (
         <>
             <Topbar />

@@ -76,6 +76,13 @@
         padding: 50px 0;
     }
 }
+@media screen and (max-width: 576px) {
+    .cta-three__single-wrap{
+        margin-right: 0;
+
+    }
+    
+}
 @media (max-width: 375px) {
     .cta-three__single {
         -webkit-box-flex: 1;

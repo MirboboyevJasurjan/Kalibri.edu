@@ -15,11 +15,35 @@ import { BsFlag } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import Course from "../Course/Course";
 
-const CourseDetails = (props) => {
+const CourseDetails = ({props}) => {
   const [courseInfo, setCourseInfo] = useState([]);
   const course_id = window.location.pathname.split("/").slice(-1);
-  const [player, setPlayer] = useState(false);
-  const [player2, setPlayer2] = useState(false);
+  const [buyCourse, setBuyCourse]= ([]);
+  // const [player, setPlayer] = useState(false);
+  // const [player2, setPlayer2] = useState(false);
+  const [players, setPlayers] = useState([]);
+  const onBuyCourse = (obj) =>{
+     axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
+     setBuyCourse(prev=>[...prev, obj]);
+  }
+  
+  const CreateCourse = (link, id) => {
+    
+    const [playerState, setState] = useState(false);
+    return { link, id, player: {
+      set: setState,
+      state: playerState
+    }};
+  };
+
+  const VideosMap = [
+    CreateCourse("https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm" ),
+    CreateCourse( "http://165.232.76.226/media/gid/video/2022/08/23/VID_127280513_040752_3030.mp4"),
+    CreateCourse( "http://165.232.76.226/media/gid/video/2022/06/03/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%8F%D1%89%D0%B8%D0%B9_%D0%B3%D0%B8%D0%B4_%D0%BF%D0%BE_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4%D1%83_-_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F.mp4"),
+
+
+
+  ];
 
   useEffect(() => {
     const getCourseInfo = async () => {
@@ -30,7 +54,7 @@ const CourseDetails = (props) => {
       setCourseInfo(response.data);
     };
     getCourseInfo();
-  }, []);
+  }, [  ]);
 
   // const [articles, setArticles] = useState([]);
   // const new_id = window.location.pathname.split("/").slice(-1);
@@ -151,30 +175,32 @@ const CourseDetails = (props) => {
                   </p>
                   <br />
                   <ul className="course-details__curriculum-list list-unstyled">
+                    {VideosMap.map((video, id)=>{
+                      console.log(video);
+                      return(
 
-                  
-                    <li>
+                      <li>
                       <div className="course-details__curriculum-list-left">
                         <div className="course-details__meta-icon video-icon">
                           <i className="fas fa-play"></i>
                         </div>
                         <a href="#none">Tahririyatga kirish</a>{" "}
-                        <span onClick={() => setPlayer(!player)}>
+                        <span onClick={() => video.player.set(!video.player.state)}>
                           Ko‘rib chiqish
                         </span>
-                        {player ? (
+                        {video.player.state ? (
                           <div className="fixedPlayer">
                             {" "}
                             <div className="player">
                             <button
                               className="btnESC"
-                              onClick={() => setPlayer(!player)}
+                              onClick={() =>video.player.set(!video.player.state)}
                             >
                               X
                             </button>
 
                               <video
-                                src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm"
+                                src={video.link}
                                 allowFullScreen
                                 className="VideoPlayer" 
                                 controls
@@ -187,38 +213,9 @@ const CourseDetails = (props) => {
                         16 daqiqa
                       </div>
                     </li>
-                    <li>
-                      <div className="course-details__curriculum-list-left">
-                        <div className="course-details__meta-icon video-icon">
-                          <i className="fas fa-play"></i>
-                        </div>
-                        <a href="#none">Tahrirlashning umumiy ko'rinishi</a>{" "}
-                        <span onClick={() => setPlayer2(!player2)}>Ko‘rib chiqish</span>
-                        {player2 ? (
-                          <div className="fixedPlayer">
-                            {" "}
-                            <div className="player">
-                            <button
-                              className="btnESC"
-                              onClick={() => setPlayer2(!player2)}
-                            >
-                              X
-                            </button>
-
-                              <video
-                                src="http://165.232.76.226/media/gid/video/2022/08/23/VID_127280513_040752_3030.mp4"
-                                allowFullScreen
-                                className="VideoPlayer"
-                                controls
-                              ></video>
-                            </div>
-                          </div>
-                        ) : null}
-                      </div>
-                      <div className="course-details__curriculum-list-right">
-                        10 daqiqa
-                      </div>
-                    </li>
+                    )})}
+                  
+                   
                     <li>
                       <div className="course-details__curriculum-list-left">
                         <div className="course-details__meta-icon file-icon">
@@ -464,7 +461,7 @@ const CourseDetails = (props) => {
             <div className="course-details__price">
               <p className="course-details__price-text">Kurs narxi</p>
               <p className="course-details__price-amount">{courseInfo.price}</p>
-              <a href="#none" className="thm-btn course-details__price-btn">
+              <a href="#none" className="thm-btn course-details__price-btn" onClick={onBuyCourse}>
                 Ushbu kursni sotib oling
               </a>
             </div>

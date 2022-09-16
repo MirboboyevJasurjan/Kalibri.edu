@@ -186,4 +186,27 @@
   .about-two__image img {
     max-width: 100%;
   }
+  .about-two__single-wrap{
+    flex-direction: column;
+  }
+  .about-two__single{
+    padding: 0px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .banner-one__scratch{
+    display: block;
+    right: -22%;
+    
+  }
+  .banner-one__title,.banner-one__tag-line{
+    text-shadow: 2px 2px black;
+  }
+}
+@media screen and (max-width: 380px) {
+  .banner-one__scratch{
+    display: block;
+    right: -25%;
+    
+  }
 }

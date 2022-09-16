@@ -21,9 +21,27 @@
 hr{
     margin: 0px !important;
 }
-.course-one{
-    /* padding-top: 0px !important; */
-}
+
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
     color: #022c46 !important;
+}
+@media screen and (max-width: 576px) {
+    .css-lfwcke-MuiTabs-flexContainer {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow: scroll;
+        height: 60px !important;
+    }
+    .css-10d9dml-MuiTabs-indicator{
+        background: none !important;
+    }
+    .css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+        width: 50% !important;
+        max-height: 50px !important;
+        font-size: 1.5em !important;
+        text-align: center  !important;
+        
+    }
+   
+    
 }

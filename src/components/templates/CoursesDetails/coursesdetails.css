@@ -699,4 +699,8 @@
 li span{
   cursor: pointer;
 }
-
+@media screen and (max-width: 576px) {
+  .VideoPlayer{
+    width: 100% !important;
+  }
+}
