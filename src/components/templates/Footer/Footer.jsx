@@ -10,8 +10,8 @@ import footer6 from "../../images/galarey/galarey6.jpg";
 import './Footer.css'
 
 const Footer = () => {
-  function scrollTop() {
-    window.scrollTo(0, 0);
+  function ToTop(){
+    window.scrollTo(0,0)
   }
   return (
     <div>
@@ -70,7 +70,7 @@ const Footer = () => {
                         <a href="#none">Help </a>
                       </li>
                       <li>
-                        <Link to="/contact">Contact</Link>
+                        <Link to="/contact" onClick={ToTop}>Contact</Link>
                       </li>
                       <li>
                         <a href="#none">Register Now</a>
@@ -124,8 +124,8 @@ const Footer = () => {
                     Phasellus vehic sagittis euismod.
                   </p>
                   <div className="footer-widget__btn-block">
-                    <Link to="/contact" className="thm-btn thm-btn-n">Contact</Link>
-                    <Link to="" className="thm-btn thm-btn-n">Purchase</Link>
+                    <Link to="/contact" onClick={ToTop} className="thm-btn thm-btn-n">Contact</Link>
+                    <Link to="" onClick={ToTop} className="thm-btn thm-btn-n">Purchase</Link>
                   </div>
                 </div>
               </div>
@@ -139,8 +139,8 @@ const Footer = () => {
             </p>
             <div className="site-footer__social">
               <div
-                onClick={scrollTop}
-                onKeyDown={scrollTop}
+                onClick={ToTop}
+                onKeyDown={ToTop}
                 role="button"
                 tabIndex={0}
                 className="scroll-to-target site-footer__scroll-top"

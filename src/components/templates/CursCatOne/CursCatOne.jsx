@@ -1,5 +1,6 @@
 import React from "react";
 import Swiper from "react-id-swiper";
+import { Link } from "react-router-dom";
 // import "swiper/swiper.min.css"
 import '../../../staticCSS/swiper.min.css'
 
@@ -10,6 +11,9 @@ import {AiFillCamera} from 'react-icons/ai';
 import {GiTargeting, GiHealthNormal} from 'react-icons/gi';
 import './CursCatOne.css'
 const CourseCatOne = () => {
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
   const params = {
     
     slidesPerView: 6,
@@ -192,7 +196,7 @@ const CourseCatOne = () => {
             </div>
           </Swiper>
         </div>
-        <a href="#none" className="thm-btn">View All Categories</a>
+        <Link to="/courses" onClick={ToTop} className="thm-btn" >View All Categories</Link>
          
       </div>
     </section>

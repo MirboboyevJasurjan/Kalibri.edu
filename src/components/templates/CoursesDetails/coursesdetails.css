@@ -701,6 +701,11 @@ li span{
 }
 @media screen and (max-width: 576px) {
   .VideoPlayer{
-    width: 100% !important;
+    width: 90% !important;
+    height: 250px;
+  }
+  .btnESC {
+    top: -160px;
+    left: 87%;
   }
 }

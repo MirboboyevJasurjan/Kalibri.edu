@@ -14,6 +14,7 @@ import { BsPlayCircle } from "react-icons/bs";
 import { BsFlag } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import Course from "../Course/Course";
+import { Link } from "react-router-dom";
 
 const CourseDetails = ({props}) => {
   const [courseInfo, setCourseInfo] = useState([]);
@@ -77,7 +78,7 @@ const CourseDetails = ({props}) => {
             <div className="course-details__content">
               <p className="course-details__author">
                 <img src={courseInfo.miniImg} alt="" />
-                by <a href="#none">{courseInfo.teacher}</a>
+                by <Link to={`/teachersdetalis/${courseInfo.id}`}>{courseInfo.teacher}</Link>
               </p>
 
               <div className="course-details__top">

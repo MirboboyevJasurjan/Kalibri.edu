@@ -8,6 +8,7 @@ import { FaGraduationCap } from "react-icons/fa";
 import "./SliderOne.css";
 import { BsArrowRight } from "react-icons/bs";
 import {TweenMax, Expo,Power3} from 'gsap'
+import { Link } from "react-router-dom";
 const SliderOne = () => {
   const [swiper, setSwiper] = useState(null);
 
@@ -25,6 +26,9 @@ const SliderOne = () => {
 
   
   }, []);
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
 
   return (
     <div className="banner-wrapper">
@@ -52,10 +56,10 @@ const SliderOne = () => {
                     <p ref={el=>{mainText2=el}} style={{opacity: 0}} className="banner-one__tag-line">
                     O'rganishga tayyormisiz?
                     </p>
-                    <a  href="#none" className="thm-btn banner-one__btn">
+                    <Link to="/courses" onClick={ToTop} className="thm-btn banner-one__btn">
                     Ko'proq ma'lumot
 {/* >>>>>>> 19a924da95affb93b740a70cb1798478e0000617 */}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

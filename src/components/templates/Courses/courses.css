@@ -290,6 +290,7 @@ a{
   .like_icons:hover{
     cursor: pointer;
   }
+  
 
   @media screen and (max-width: 576px) {
     .course-one__image > img {

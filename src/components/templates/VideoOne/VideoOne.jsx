@@ -2,7 +2,11 @@ import React from 'react';
 import imgsctach from '../../images/scratch-1-1.png';
 import './VideoOne.css'
 import { BsFillPlayFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 function VideoOne(props) {
+    function ToTop(){
+        window.scrollTo(0,0)
+      }
     return (
         <>
             <section className="video-two">
@@ -14,7 +18,7 @@ function VideoOne(props) {
                                 <div className="video-two__title">
                                 Kipso one & only  <br /> mission is to extend <br /> your knowledge base
                                 </div>
-                                <a href="#none" className="thm-btn">Learn More</a>
+                                <Link to="/courses" onClick={ToTop} className="thm-btn">Learn More</Link>
                             </div>
                         </div>
                         <div className="col-lg-5 d-flex justify-content-lg-end justify-content-sm-start">

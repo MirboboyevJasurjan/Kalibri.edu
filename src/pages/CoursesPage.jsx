@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import Topbar from "../components/templates/TopBar/TopBar";
 import Banner from '../components/templates/Banner/Banner';
 import Courses from '../components/templates/Courses/Coureses';
@@ -15,10 +15,12 @@ import axios from "axios";
 
 
 
+
 function CoursesPage(props) {
     const [course, setCourse] = useState([])
     const [cartItems, setCartItems] = React.useState([ ]);
     const [favorites, setFavorites] = React.useState([]);
+    
 
 
  
@@ -69,7 +71,7 @@ function CoursesPage(props) {
                     
         
                         {course.map((item, index) => (
-                            <Course key={index}
+                            <Course key={index} className="mainCourse"
                             course={cartItems}
                             mainImg={item.mainImg}
                             miniImg={item.miniImg}

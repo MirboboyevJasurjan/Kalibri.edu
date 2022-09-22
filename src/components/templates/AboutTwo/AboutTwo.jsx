@@ -6,6 +6,7 @@ import about1 from "../../images/about2.jpg";
 import { GiGiftOfKnowledge } from 'react-icons/gi';
 import { FaBookReader } from 'react-icons/fa';
 import './AboutTwo.css'
+import { Link } from "react-router-dom";
 
 export default function AboutTwo() {
   // constructor() {
@@ -27,6 +28,9 @@ export default function AboutTwo() {
   //     this.setState({ startCounter: true });
   //   }
   // };
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
 
 
   return (
@@ -68,9 +72,9 @@ export default function AboutTwo() {
                   </div>
                 </div>
               </div>
-              <a href="#none" className="thm-btn">
+              <Link to="/courses" onClick={ToTop} className="thm-btn">
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-xl-6 d-flex justify-content-xl-end justify-content-sm-center">

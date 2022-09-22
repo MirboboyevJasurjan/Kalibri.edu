@@ -102,7 +102,7 @@ export default function VerticalTabs({
     .then((json) => {
       setFavoriteCourse(json);
     });
-  },[])
+  },[favoriteCourse])
   const onFavorite = (obj) =>{
     axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
     setFavoriteCourse(prev=>[...prev, obj]);

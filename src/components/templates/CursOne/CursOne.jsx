@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Swiper from "react-id-swiper";
+import Course from "../Course/Course";
+import axios from "axios";
 // import "swiper/swiper.min.css";
 import '../../../staticCSS/swiper.min.css'
 
@@ -23,6 +25,7 @@ const CourseOne = () => {
   const menuHandler = () => {
     const element = document.querySelector(".like_icons1");
     const element2 = document.querySelector(".like_icons2");
+    
 
     if (element.style.opacity === "1") {
       element.style.opacity = "0";
@@ -62,7 +65,34 @@ const CourseOne = () => {
       },
     },
   };
+  const [arrCourse, setArrCourse] = useState([])
+  const arrReverse = [...arrCourse]
+  const [favorites, setFavorites] = React.useState([]);
+  const [isFavorite, setIsFavorite] = React.useState(false);
 
+
+  React.useEffect(()=>{
+    fetch('https://6309e6f632499100327d641a.mockapi.io/course').then((res)=>{
+        return res.json();
+        })
+        .then((json)=>{
+          setArrCourse(json);
+        })
+    },[])
+    const onFavorite = (obj) =>{
+      axios.post('https://6309e6f632499100327d641a.mockapi.io/favorites', obj);
+      setFavorites(prev=>[...prev, obj]);
+    }
+    const onClickFavorite =(item)=> {
+      onFavorite(item);
+      console.log("закладки")
+      setIsFavorite(!isFavorite)
+    }
+     
+  function ToTop(){
+    window.scrollTo(0,0)
+  }
+ 
   return (
     <div>
       <section className="course-one__top-title home-one">
@@ -81,7 +111,149 @@ const CourseOne = () => {
         <div className="container">
           <div className="course-one__carousel">
             <Swiper {...params}>
-              <div className="col-lg-4">
+            {arrCourse.map((item, index) => (
+         <div className="col-lg-4">
+                    <div className="course-one__single">
+                      <div className="course-one__image">
+                        <img src={item.mainImg} alt="" />
+                        <i className="like_icons" onClick={onClickFavorite}>{isFavorite?<AiFillHeart/>:<AiOutlineHeart/>}</i>
+
+                        {/* <i className="like_icons">
+                          <AiOutlineHeart
+                            onClick={menuHandler}
+                            className="like_icons1"
+                          />
+                          <AiFillHeart
+                            onClick={menuHandler}
+                            className="like_icons2"
+                          />
+                        </i> */}
+                      </div>
+                      <div className="course-one__content">
+                        <a href="#none" className="course-one__category">
+                          development
+                        </a>
+                        <div className="course-one__admin">
+                          <img src={item.miniImg} alt="" />
+                          by <Link to={`/teachersdetalis/${item.id}`} onClick={ToTop}>{item.teacher}</Link>
+                        </div>
+                        <h2 className="course-one__title">
+                          <Link to={`/coursedetalis/${item.id}`} onClick={ToTop}>{item.courseName}</Link>
+                        </h2>
+    
+                        <div className="course-one__meta">
+                          <a href="/course-details">
+                            <i className="far fa-clock"></i> {item.hour}
+                          </a>
+                          <a href="/course-details">
+                            <i className="far fa-folder-open"></i> {item.lectures} Lectures
+                          </a>
+                          <Link to={`/coursedetalis/${item.id}`} onClick={ToTop}>{item.price}</Link>
+                        </div>
+                        <Link to={`/coursedetalis/${item.id}`} onClick={ToTop} className="course-one__link">
+                          See Preview
+                        </Link>
+                      </div>
+                    </div>
+                  </div> 
+                    
+          
+                    
+                  ))}
+            {arrReverse.map((item, index) => (
+         <div className="col-lg-4">
+                    <div className="course-one__single">
+                      <div className="course-one__image">
+                        <img src={item.mainImg} alt="" />
+                        <i className="like_icons" onClick={onClickFavorite}>{isFavorite?<AiFillHeart/>:<AiOutlineHeart/>}</i>
+
+                        
+                        {/* <i className="like_icons">
+                          <AiOutlineHeart
+                            onClick={menuHandler}
+                            className="like_icons1"
+                          />
+                          <AiFillHeart
+                            onClick={menuHandler}
+                            className="like_icons2"
+                          />
+                        </i> */}
+                      </div>
+                      <div className="course-one__content">
+                        <a href="#none" className="course-one__category">
+                          development
+                        </a>
+                        <div className="course-one__admin">
+                          <img src={item.miniImg} alt="" />
+                          by <Link to="/teachersdetalis">{item.teacher}</Link>
+                        </div>
+                        <h2 className="course-one__title">
+                          <Link to={`/coursedetalis/${item.id}`} onClick={ToTop}>{item.courseName}</Link>
+                        </h2>
+    
+                        <div className="course-one__meta">
+                          <a href="/course-details">
+                            <i className="far fa-clock"></i> {item.hour}
+                          </a>
+                          <a href="/course-details">
+                            <i className="far fa-folder-open"></i> {item.lectures} Lectures
+                          </a>
+                          <Link to={`/coursedetalis/${item.id}`} onClick={ToTop}>{item.price}</Link>
+                        </div>
+                        <Link to={`/coursedetalis/${item.id}`} onClick={ToTop} className="course-one__link">
+                          See Preview
+                        </Link>
+                      </div>
+                    </div>
+                  </div> 
+                    
+          
+                    
+                  ))}
+        
+                  {/* <div className="col-lg-4">
+                <div className="course-one__single">
+                  <div className="course-one__image">
+                    <img src={course1} alt="" />
+                    <i className="like_icons">
+                      <AiOutlineHeart
+                        onClick={menuHandler}
+                        className="like_icons1"
+                      />
+                      <AiFillHeart
+                        onClick={menuHandler}
+                        className="like_icons2"
+                      />
+                    </i>
+                  </div>
+                  <div className="course-one__content">
+                    <a href="#none" className="course-one__category">
+                      development
+                    </a>
+                    <div className="course-one__admin">
+                      <img src={team1} alt="" />
+                      by <Link to="/teachersdetalis">Lou Guerrero</Link>
+                    </div>
+                    <h2 className="course-one__title">
+                      <Link to="/coursedetails">New react bootcamp</Link>
+                    </h2>
+
+                    <div className="course-one__meta">
+                      <a href="/course-details">
+                        <i className="far fa-clock"></i> 10 Hours
+                      </a>
+                      <a href="/course-details">
+                        <i className="far fa-folder-open"></i> 6 Lectures
+                      </a>
+                      <a href="/course-details">$18</a>
+                    </div>
+                    <a href="#none" className="course-one__link">
+                      See Preview
+                    </a>
+                  </div>
+                </div>
+              </div> */}
+              {/* <div className="col-lg-4">
                 <div className="course-one__single">
                   <div className="course-one__image">
                     <img src={course1} alt="" />
@@ -303,7 +475,7 @@ const CourseOne = () => {
                     </a>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </Swiper>
           </div>
         </div>

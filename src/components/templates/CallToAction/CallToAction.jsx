@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import cta1 from "../../images/benifites.jpg";
 import './CallToAction.css'
 import { GrResources } from 'react-icons/gr';
+import { Link } from "react-router-dom";
+function ToTop(){
+  window.scrollTo(0,0)
+}
 class CallToActionThree extends Component {
+
   render() {
     return (
       <section className="cta-three">
@@ -40,9 +45,9 @@ class CallToActionThree extends Component {
                     <p className="cta-three__single-text">Expert Teachers</p>
                   </div>
                 </div>
-                <a href="#none" className="thm-btn">
+                <Link to="/courses" onClick={ToTop} href="#none" className="thm-btn">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

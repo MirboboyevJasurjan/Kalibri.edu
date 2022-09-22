@@ -75,9 +75,7 @@ const NavOne = () => {
               <li >
                 <Link to="/">Bosh sahifa</Link>
               </li>
-              <li >
-                <Link to="/gallery">Galereya</Link>
-              </li>
+             
               <li>
                 <Link to="/courses">Kurslar</Link>
                 <ul className="sub-menu">
@@ -110,6 +108,10 @@ const NavOne = () => {
                     <Link to="/newsdetalis">Yangiliklar haqida</Link>
                   </li>
                 </ul>
+                
+              </li>
+              <li >
+                <Link to="/gallery">Galereya</Link>
               </li>
               <li>
                 <Link to="/contact">Kontaktlar</Link>

@@ -60,7 +60,7 @@ function Course({mainImg, miniImg, hour, lectures, price, teacher, courseName, o
                 </a>
                 <div className="course-one__admin">
                   <img src={miniImg} alt="" />
-                  by <Link to="/teachersdetalis">{teacher}</Link>
+                  by <Link to={`/teachersdetalis/${id}`}>{teacher}</Link>
                 </div>
                 <h2 className="course-one__title">
                   <Link to={`/coursedetalis/${id}`} onClick={ToTop}>{courseName}</Link>
