@@ -94,6 +94,18 @@ a {
 .my-auto:hover .video-two__popup:before {
     left: 0 !important;
 }
+.video_play_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: fixed;
+    z-index: 1111;
+    backdrop-filter: blur(2px);
+}
 
 .video-two__popup i {
     font-size: 38px;
