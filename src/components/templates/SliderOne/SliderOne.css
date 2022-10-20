@@ -127,6 +127,7 @@
 
 .banner-one__light-color {
   color: #fff;
+  z-index: 2;
 }
 
 
@@ -196,6 +197,7 @@
   backface-visibility: visible !important;
   margin-bottom: 55px;
   position: relative;
+  z-index: 2;
 }
 
 .banner-one__btn {
@@ -208,6 +210,7 @@
   animation-fill-mode: both;
   -webkit-backface-visibility: visible !important;
   backface-visibility: visible !important;
+  z-index: 2;
 }
 
 .banner-one__person {

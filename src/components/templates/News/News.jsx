@@ -48,7 +48,7 @@ const News = () => {
         <div className="row">
         {NewsCards.map((news, index)=>{
           return(
-           <div className="col-lg-4">
+           <div className="col-lg-4" key={index}>
            <div className="blog-one__single">
              <div className="blog-one__image">
                <img src={news.img} alt="" />

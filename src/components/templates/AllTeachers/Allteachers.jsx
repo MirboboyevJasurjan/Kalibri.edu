@@ -97,9 +97,9 @@ const Teachers = () => {
     <section className="team-one team-page">
       <div className="container">
         <div className="row">
-          {teachersCards.map((e, index) => {
+          {teachersCards.map((e, teachers) => {
             return (
-          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+          <div className="col-xl-3 col-lg-6 col-md-6 col-sm-12" key={teachers}>
             <div className="team-one__single">
             <Link to={`/teachersdetalis/${e.id}`} onClick={ToTop}>
               <div className="team-one__image">

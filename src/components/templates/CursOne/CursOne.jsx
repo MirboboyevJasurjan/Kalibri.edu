@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Swiper from "react-id-swiper";
+
 import Course from "../Course/Course";
 import axios from "axios";
 // import "swiper/swiper.min.css";
@@ -21,6 +22,7 @@ import team4 from "../../images/team-1-4.jpg";
 import team5 from "../../images/team-1-1.jpg";
 import team6 from "../../images/team-1-2.jpg";
 
+
 const CourseOne = () => {
   const menuHandler = () => {
     const element = document.querySelector(".like_icons1");
@@ -35,18 +37,20 @@ const CourseOne = () => {
       element2.style.opacity = "0";
     }
   };
+ 
   const params = {
     slidesPerView: 3,
     loop: true,
     speed: 1000,
     spaceBetween: 30,
     autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
+      delay: 2500,
+      disableOnInteraction: true,
     },
+    dote: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+      el: '.swiper-pagination',
+      clickable: true
     },
 
     // Responsive breakpoints
@@ -110,9 +114,9 @@ const CourseOne = () => {
       <section className="course-one course-one__teacher-details home-one">
         <div className="container">
           <div className="course-one__carousel">
-            <Swiper {...params}>
-            {arrCourse.map((item, index) => (
-         <div className="col-lg-4">
+            <Swiper {...params} autoplay={true}>
+            {arrCourse.map((item, courseOne) => (
+         <div className="col-lg-4" key={courseOne}>
                     <div className="course-one__single">
                       <div className="course-one__image">
                         <img src={item.mainImg} alt="" />
@@ -160,24 +164,14 @@ const CourseOne = () => {
           
                     
                   ))}
-            {arrReverse.map((item, index) => (
-         <div className="col-lg-4">
+            {/* {arrReverse.map((item, favorite) => (
+         <div className="col-lg-4" key={favorite}>
                     <div className="course-one__single">
                       <div className="course-one__image">
                         <img src={item.mainImg} alt="" />
                         <i className="like_icons" onClick={onClickFavorite}>{isFavorite?<AiFillHeart/>:<AiOutlineHeart/>}</i>
 
-                        
-                        {/* <i className="like_icons">
-                          <AiOutlineHeart
-                            onClick={menuHandler}
-                            className="like_icons1"
-                          />
-                          <AiFillHeart
-                            onClick={menuHandler}
-                            className="like_icons2"
-                          />
-                        </i> */}
+                  
                       </div>
                       <div className="course-one__content">
                         <a href="#none" className="course-one__category">
@@ -209,7 +203,7 @@ const CourseOne = () => {
                     
           
                     
-                  ))}
+                  ))} */}
         
                   {/* <div className="col-lg-4">
                 <div className="course-one__single">
