@@ -15,6 +15,7 @@ import { BsFlag } from "react-icons/bs";
 import { BsBell } from "react-icons/bs";
 import Course from "../Course/Course";
 import { Link } from "react-router-dom";
+import VideoPlayer from "../../molecules/VideoPlayer/VideoPlayer";
 
 const CourseDetails = ({props}) => {
   const [courseInfo, setCourseInfo] = useState([]);
@@ -39,7 +40,7 @@ const CourseDetails = ({props}) => {
 
   const VideosMap = [
     CreateCourse("https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.webm" ),
-    CreateCourse( "http://165.232.76.226/media/gid/video/2022/08/23/VID_127280513_040752_3030.mp4"),
+    CreateCourse( "https://www.youtube.com/embed/5X5ZLWdAnt4"),
     CreateCourse( "http://165.232.76.226/media/gid/video/2022/06/03/%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%8F%D1%89%D0%B8%D0%B9_%D0%B3%D0%B8%D0%B4_%D0%BF%D0%BE_%D0%A1%D0%B0%D0%BC%D0%B0%D1%80%D0%BA%D0%B0%D0%BD%D0%B4%D1%83_-_%D0%95%D0%B2%D0%B3%D0%B5%D0%BD%D0%B8%D1%8F.mp4"),
 
 
@@ -190,24 +191,26 @@ const CourseDetails = ({props}) => {
                           Ko‘rib chiqish
                         </span>
                         {video.player.state ? (
-                          <div className="fixedPlayer">
-                            {" "}
-                            <div className="player">
-                            <button
-                              className="btnESC"
-                              onClick={() =>video.player.set(!video.player.state)}
-                            >
-                              X
-                            </button>
+                          <VideoPlayer videoLink={video.link} clickBtn={() =>video.player.set(!video.player.state)}/>
+                          // <div className="fixedPlayer">
+                          //   {" "}
+                          //   <div className="player">
+                          //   <button
+                          //     className="btnESC"
+                          //     onClick={() =>video.player.set(!video.player.state)}
+                          //   >
+                          //     X
+                          //   </button>
+                            
 
-                              <video
-                                src={video.link}
-                                allowFullScreen
-                                className="VideoPlayer" 
-                                controls
-                              ></video>
-                            </div>
-                          </div>
+                          //     <video
+                          //       src={video.link}
+                          //       allowFullScreen
+                          //       className="VideoPlayer" 
+                          //       controls
+                          //     ></video>
+                          //   </div>
+                          // </div>
                         ) : null}
                       </div>
                       <div className="course-details__curriculum-list-right">

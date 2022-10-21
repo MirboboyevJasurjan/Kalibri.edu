@@ -66,7 +66,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-left: 90px;
+  margin-left: 50px;
   margin-top: 5px;
 }
 
@@ -239,7 +239,7 @@
   padding-bottom: 0;
 }
 #navbar{
-  transition: 2s  ease !important;
+  transition: 1.2s  ease !important;
 }
 #navbar.active{
   position: fixed;
@@ -262,7 +262,7 @@
     padding-bottom: 15px !important;
   }
   .header__social{
-    margin-left: 0px;
+    margin-left: 20px;
   }
 }
 
@@ -365,7 +365,44 @@
   -ms-flex-align: center;
   align-items: center;
 }
+.navbar-brand_btn{
+  height: auto;
+  background-color: #2da397;
+  border: 2px solid #2da397;
+  border-radius: 10px;
+}
+.navbar-brand_btn svg{
+  color: #fff;
+  font-size: 1.2rem;
+}
+.dropdown-category.open{
+  display: flex;
+  flex-direction: column;
+  background-color: #012237;
+  min-width: 220px;
+  position: absolute;
+  z-index: 111;
+  margin-top: 10px;
+}
+.dropdown-category.open a{
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  padding: 12px 30px;
+  display: block;
+  line-height: 26px;
+  white-space: nowrap;
+  position: relative;
+  transition: all .4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.dropdown-category.open a:hover{
+  background-color: #f16101;
+}
 
+.dropdown-category.closed{
+  display: none !important;
+}
 .header-navigation .container .navbar-brand {
   height: auto;
   margin: 0;
@@ -394,12 +431,23 @@
   .header-navigation .main-navigation {
     display: block !important;
   }
-}
-
-@media (max-width: 992px) {
   .header-navigation .main-navigation {
     display: none !important;
   }
+  .menu-icon {
+    position: absolute;
+    right: 30px;
+    font-size: 1.2em;
+    top: 11px;
+    display: block !important;
+    color: #81868a;
+  }
+  .navigation-box li h6{
+    margin-bottom: 0px;
+  }
+}
+
+@media (max-width: 992px) {
 
   .active_nav {
     top: 0;
@@ -407,7 +455,7 @@
 }
 
 .menu-icon {
-  display: none !important;
+  display: none;
 }
 
 @media (max-width: 992px) {
@@ -418,6 +466,14 @@
     top: 11px;
     display: block !important;
     color: #81868a;
+  }
+  .slick-prev{
+    position: absolute;
+    left: 40px !important;
+  }
+  .slick-next{
+    position: absolute;
+    right: 40px !important;
   }
 }
 
@@ -635,7 +691,19 @@
   display: none;
 }
 
-
+@media screen and (max-width: 576px) {
+  .header__social a+a{
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header__social a+a{
+    margin-left: 10px;
+  }
+  .header__social{
+    margin-left: 10px;
+  }
+}
 
 
 

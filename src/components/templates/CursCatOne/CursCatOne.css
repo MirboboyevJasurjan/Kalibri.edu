@@ -116,4 +116,15 @@
     background-color: #f16101;
     color: #fff;
   }
+
+  
+
+  .course-category-one__slider .slick-list {
+    margin-left: -15px;
+    margin-right: -15px;
+
+  }
+  .course-category-one__slider .slick-slide>div {padding: 0 15px;}
+  
+
   

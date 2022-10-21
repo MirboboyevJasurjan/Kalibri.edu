@@ -1,8 +1,10 @@
 import React from "react";
-import Swiper from "react-id-swiper";
+// import Swiper from "react-id-swiper";
 import { Link } from "react-router-dom";
 // import "swiper/swiper.min.css"
 import '../../../staticCSS/swiper.min.css'
+import Slider from "react-slick";
+
 
 import {FaDesktop} from 'react-icons/fa';
 import {RiMiniProgramLine} from 'react-icons/ri';
@@ -14,33 +16,76 @@ const CourseCatOne = () => {
   function ToTop(){
     window.scrollTo(0,0)
   }
-  const params = {
+  // const params = {
     
-    slidesPerView: 6,
-    loop: true,
-    speed: 1000,
-    spaceBetween: 30,
-    autoplay:true,
-    autoplay: {
-      delay: 1000,
-      disableOnInteraction:true
-    },
+  //   slidesPerView: 6,
+  //   // loop: true,
+  //   speed: 1000,
+  //   spaceBetween: 30,
+  //   autoplay: {
+  //     delay: 1000,
+  //     disableOnInteraction: false
+  //   },
 
-    // Responsive breakpoints
-    breakpoints: {
-      1024: {
-        slidesPerView: 6
+  //   // Responsive breakpoints
+  //   breakpoints: {
+  //     1024: {
+  //       slidesPerView: 6
+  //     },
+  //     768: {
+  //       slidesPerView: 4
+  //     },
+  //     640: {
+  //       slidesPerView: 3
+  //     },
+  //     320: {
+  //       slidesPerView: 2
+  //     }
+  //   }
+  // };
+  const settings = {
+    // dots: true,
+    arrows:false,
+    infinite: true,
+    speed: 1200,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2200,
+     cssEasing: 'cubic-bezier(0.600, -0.280, 0.735, 0.045)',
+     infinite: true,
+     responsive: [
+      {
+          breakpoint: 1200,
+          settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1,
+          }
       },
-      768: {
-        slidesPerView: 4
+      {
+          breakpoint: 1024,
+          settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+          }
       },
-      640: {
-        slidesPerView: 3
+      {
+          breakpoint: 600,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+          }
       },
-      320: {
-        slidesPerView: 2
+      {
+          breakpoint: 480,
+          settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+          }
       }
-    }
+    ]
+   
+
   };
 
   return (
@@ -53,7 +98,7 @@ const CourseCatOne = () => {
           </h2>
         </div>
         <div className="course-category-one__carousel">
-          <Swiper {...params}>
+          <Slider {...settings} className="course-category-one__slider">
             <div className="item">
               <div className="course-category-one__single color-1">
                 <div className="course-category-one__icon">
@@ -194,7 +239,7 @@ const CourseCatOne = () => {
                 </h3>
               </div>
             </div>
-          </Swiper>
+          </Slider>
         </div>
         <Link to="/courses" onClick={ToTop} className="thm-btn" >View All Categories</Link>
          

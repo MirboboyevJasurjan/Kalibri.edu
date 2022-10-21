@@ -6,7 +6,7 @@ import Jamshid from "../../images/Jamshid.png"
 import person2 from "../../images/scratch-1-1.png";
 import { FaGraduationCap } from "react-icons/fa";
 import "./SliderOne.css";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsArrowLefit } from "react-icons/bs";
 import {TweenMax, Expo,Power3} from 'gsap'
 import { Link } from "react-router-dom";
 const SliderOne = () => {
@@ -34,13 +34,15 @@ const SliderOne = () => {
     arrows:true,
 
     infinite: true,
-    speed: 2000,
+    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2500,
+    autoplay: false,
+    autoplaySpeed: 2200,
      cssEasing: 'cubic-bezier(0.600, -0.280, 0.735, 0.045)',
-     infinite: true
+     infinite: true,
+    //  nextArrow: <br />,
+    //  prevArrow: <br />,
    
 
   };
@@ -58,7 +60,7 @@ const SliderOne = () => {
                   //  ref={el=>{teacherImg=el}}
                     src={Jamshid}
                     alt=""
-                    className="banner-one__scratch" style={{width: "360px", height:"700px", objectFit: "cover", zIndex:"1"}}
+                    className="banner-one__scratch" style={{width: "410px", height:"780px", objectFit: "cover", zIndex:"1"}}
                   />
                 </div>
 
@@ -93,7 +95,7 @@ const SliderOne = () => {
                   <img 
                     src={Jamshid}
                     alt=""
-                    className="banner-one__scratch" style={{width: "360px", height:"700px", objectFit: "cover"}}
+                    className="banner-one__scratch" style={{width: "410px", height:"780px", objectFit: "cover"}}
                   />
                 </div>
 

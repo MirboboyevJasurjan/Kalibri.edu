@@ -9,6 +9,7 @@ import {
   AiOutlineInstagram,
   AiOutlineSearch,
 } from "react-icons/ai";
+
 import { FaBars, FaPinterestP, FaTimes, FaPlus } from "react-icons/fa";
 
 const NavOne = () => {
@@ -47,6 +48,7 @@ const NavOne = () => {
   function ToTop(){
     window.scrollTo(0,0)
   }
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <header className="site-header site-header__header-one ">
@@ -64,6 +66,14 @@ const NavOne = () => {
                 alt="Awesome alter text"
               />
             </Link>
+            <div className="navbar-brand navbar-brand_dropdown sub-menu" >
+              <button className="navbar-brand_btn" onClick={()=>setIsOpen(!isOpen)}>{isOpen?<FaTimes/>:<FaBars/>}</button>
+              <div className={'dropdown-category'+' ' + (isOpen? 'open': 'closed')}>
+                <a href="#">Category 1</a>
+                <a href="#">Category 2</a>
+                <a href="#">Category 3</a>
+              </div>
+            </div>
             <div className="header__social">
               <a href="#none">
                 <AiOutlineTwitter />
