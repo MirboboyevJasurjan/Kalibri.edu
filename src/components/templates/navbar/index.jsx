@@ -37,11 +37,11 @@ export default function index() {
 
                 <div className='nav_right'>
                     <ul className='nr_right'>
-                        <li><Link className='links' href="#"> Home </Link></li>
-                        <li><Link className='links' href="#"> Courses </Link></li>
-                        <li><Link className='links' href="#"> Teachers </Link></li>
-                        <li><Link className='links' href="#"> News </Link></li>
-                        <li><Link className='links' href="#"> Contact </Link></li>
+                        <li><Link className='links' href="#"> Bosh sahifa </Link></li>
+                        <li><Link className='links' href="#"> Kurslar </Link></li>
+                        <li><Link className='links' href="#"> Ustozlar </Link></li>
+                        <li><Link className='links' href="#"> Yangiliklar </Link></li>
+                        <li><Link className='links' href="#"> Kontaktlar </Link></li>
                     </ul>
                 </div>
 

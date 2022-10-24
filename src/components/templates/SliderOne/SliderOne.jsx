@@ -51,7 +51,7 @@ const SliderOne = () => {
     <div className="banner-wrapper">
       <section className="banner-one banner-carousel__one no-dots">
         <section getSwiper={setSwiper}>
-          <Slider {...settings} style={{overflow:"hidden"}}>
+          <Slider {...settings} className="banner-one_slider" style={{overflow:"hidden"}}>
             <div className="banner-one__slide banner-one__slide-one">
               <div className="container">
                 <div className="aaab">

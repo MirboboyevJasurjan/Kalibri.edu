@@ -518,7 +518,7 @@
 .slick-next:hover .slick-initialized::after {
   right: 100px;
 }
-.slick-initialized:before{
+.banner-one section .slick-initialized:before{
   content: '';
   border: 2px solid #fff;
   width: 60px;
@@ -531,7 +531,7 @@
   transition: all .4s ease;
 
 }
-.slick-initialized:after{
+.banner-one section .slick-initialized:after{
   content: '';
   border: 2px solid #fff;
   width: 60px;
@@ -545,3 +545,26 @@
 }
 
 
+@media screen and (max-width: 992px) {
+  .banner-one section .slick-initialized:after{
+    right: 50px;
+  }
+  .banner-one section .slick-initialized:before{
+    left: 50px;
+
+  }
+
+  
+}
+@media screen and (max-width: 576px) {
+  .banner-one section .slick-initialized:after{
+    right: 50px;
+    top: 46.8%;
+  }
+  .banner-one section .slick-initialized:before{
+    left: 50px;
+    top: 46.8%;
+  }
+
+  
+}

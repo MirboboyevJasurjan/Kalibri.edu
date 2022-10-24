@@ -171,7 +171,7 @@ const NavOne = () => {
                 <Link to="/gallery" onClick={ToTop}>Galereya</Link>
               </li>
               <li onClick={addSubMenu3}>
-                <h6>Courses</h6>
+                <h6>Kurslar</h6>
                 <ul className={subMenu3 ? "d-none" : "sub-menu"}>
                   <li>
                     <Link to="/courses" onClick={ToTop}>Kurslar</Link>
@@ -182,7 +182,7 @@ const NavOne = () => {
                 </ul>
               </li>
               <li onClick={addSubMenu5}>
-                <h6>Teachers</h6>
+                <h6>Ustozlar</h6>
                 <ul className={subMenu5 ? "d-none" : "sub-menu"}>
                   <li>
                     <Link to="/teachers" onClick={ToTop}>Ustozlar</Link>
